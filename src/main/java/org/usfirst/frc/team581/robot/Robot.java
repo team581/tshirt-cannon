@@ -29,7 +29,7 @@ public class Robot extends IterativeRobot {
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
-	public static OI oi;
+	public static DriverControl oi;
 	public static final Drive drive = new Drive();
 	public static final Cannon cannon = new Cannon();
 	public static final Turret turret = new Turret();
@@ -41,7 +41,7 @@ public class Robot extends IterativeRobot {
 		//chooser.addDefault("Default Auto", defaultAuto);
 		//chooser.addObject("My Auto", customAuto);
 		//SmartDashboard.putData("Auto choices", chooser);
-		oi = new OI();
+		oi = new DriverControl();
 	}
 
 	/**

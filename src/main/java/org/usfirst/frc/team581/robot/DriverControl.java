@@ -20,7 +20,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-public class OI {
+public class DriverControl {
 
 	public Joystick leftJoy = new Joystick(0);
 	public Joystick rightJoy = new Joystick(1);
@@ -52,7 +52,7 @@ public class OI {
 		return rightJoy.getY();
 	} 
 	
-	public OI() {
+	public DriverControl() {
 		cbutton1.whenPressed(new SolenoidOn());
 		cbutton1.whenReleased(new SolenoidOff());
 		cbutton10.whenPressed(new ToggleCompressor());
