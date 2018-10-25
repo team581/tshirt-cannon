@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class DsolenoidExtend extends Command{
 
 	public DsolenoidExtend() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	protected void initialize() {
     }
