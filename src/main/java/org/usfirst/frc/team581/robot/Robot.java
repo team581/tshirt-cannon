@@ -87,6 +87,7 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void testPeriodic() {
-    LiveWindow.run();
+    // This command has been deprecated
+    // LiveWindow.run();
   }
 }
