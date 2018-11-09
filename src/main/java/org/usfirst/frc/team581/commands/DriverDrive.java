@@ -10,7 +10,9 @@ public class DriverDrive extends Command {
   }
 
   protected void execute() {
-    Robot.drive.driveWithJoysticks(Robot.driverControl.getLeftJoy(), Robot.driverControl.getRightJoy());
+    Robot.drive.driveWithJoysticks(
+        Robot.driverControl.getLeftJoy(), Robot.driverControl.getRightJoy()
+    );
   }
 
   @Override
