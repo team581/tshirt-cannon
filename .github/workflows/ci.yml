@@ -23,6 +23,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v1
       - name: Setup Node.js for use with actions
         uses: actions/setup-node@v1.1.0
         with:
@@ -31,13 +33,5 @@ jobs:
         run: curl -o- -L https://yarnpkg.com/install.sh | bash
       - name: Install dependencies with Yarn
         run: yarn install
-      - name: List files
-        run: ls -la
-      - name: Print working directory
-        run: pwd
-      - name: List many files
-        run: cd ..; ls -la
-      - name: Show package.json contents
-        run: cat package.json
       - name: Check formatting with Prettier
         run: yarn run check-formatting
