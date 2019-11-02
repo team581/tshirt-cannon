@@ -36,7 +36,7 @@ jobs:
       - name: Print working directory
         run: pwd
       - name: List many files
-        run: cd ..; tree
+        run: cd ..; ls -la
       - name: Show package.json contents
         run: cat package.json
       - name: Check formatting with Prettier
