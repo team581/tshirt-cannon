@@ -33,6 +33,10 @@ jobs:
         run: yarn install
       - name: List files
         run: ls -la
+      - name: Print working directory
+        run: pwd
+      - name: List many files
+        run: cd ..; tree
       - name: Show package.json contents
         run: cat package.json
       - name: Check formatting with Prettier
