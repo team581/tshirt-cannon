@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.util.Config;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -34,6 +35,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    System.out.println("Hello from " + Config.id);
+
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
 
