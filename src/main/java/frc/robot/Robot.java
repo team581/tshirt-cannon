@@ -115,7 +115,6 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
 
-    // TODO: Implement joystick input handling
-    motorSubsystem.drive.arcadeDrive(0,  0);
+    motorSubsystem.drive.arcadeDrive(OI.driveJoystick.getScaledY(), OI.driveJoystick.getScaledX());
   }
 }
