@@ -6,13 +6,14 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot;
 
+import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.MotorSubsystem;
 import frc.robot.util.Config;
 
 /**
@@ -24,6 +25,7 @@ import frc.robot.util.Config;
  */
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
+  public static MotorSubsystem motorSubsystem = new MotorSubsystem();
   public static OI m_oi;
 
   Command m_autonomousCommand;
@@ -95,14 +97,6 @@ public class Robot extends TimedRobot {
     }
   }
 
-  /**
-   * This function is called periodically during autonomous.
-   */
-  @Override
-  public void autonomousPeriodic() {
-    Scheduler.getInstance().run();
-  }
-
   @Override
   public void teleopInit() {
     // This makes sure that the autonomous stops running when
@@ -120,11 +114,8 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
-  }
 
-  /**
-   * This function is called periodically during test mode.
-   */
-  @Override
-  public void testPeriodic() {}
+    // TODO: Implement joystick input handling
+    motorSubsystem.drive.arcadeDrive(0,  0);
+  }
 }
