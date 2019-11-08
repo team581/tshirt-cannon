@@ -34,5 +34,5 @@ public class RobotMap {
   public final static int backRightSparkPort = 4;
 
   /** Controller port. */
-  public final static int controllerPort = 1;
+  public final static int controllerPort = 0;
 }
