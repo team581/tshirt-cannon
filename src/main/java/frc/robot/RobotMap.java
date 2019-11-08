@@ -30,4 +30,7 @@ public class RobotMap {
   public final static int backLeftSparkPort = 3;
   /** The port for the Spark motor controller on the back right. */
   public final static int backRightSparkPort = 4;
+
+  /** Controller port. */
+  public final static int controllerPort = 1;
 }

@@ -11,4 +11,7 @@ public final class Config {
 
   /** ID of the robot. */
   public static final String id = dotenv.get("ROBOT_IDENTIFIER");
+
+  /** The value of the exponent used to scale joystick values. */
+  public static final float joystickValueExponent = Float.parseFloat(dotenv.get("JOYSTICK_VALUE_EXPONENT"));
 }
