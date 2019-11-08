@@ -6,10 +6,10 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import frc.robot.RobotMap;
 
 /**
@@ -19,15 +19,19 @@ import frc.robot.RobotMap;
 public class MotorSubsystem extends Subsystem {
   /** The Spark motor controller for the front left side of the robot. */
   private final Spark frontLeft = new Spark(RobotMap.frontLeftSparkPort);
+
   /** The Spark motor controller for the front right side of the robot. */
   private final Spark frontRight = new Spark(RobotMap.frontRightSparkPort);
+
   /** The Spark motor controller for the back left side of the robot. */
   private final Spark backLeft = new Spark(RobotMap.backLeftSparkPort);
+
   /** The Spark motor controller for the back right side of the robot. */
   private final Spark backRight = new Spark(RobotMap.backRightSparkPort);
 
   /** Speed controller group for the motor controllers on the left. */
   private final SpeedControllerGroup leftMotorControllers = new SpeedControllerGroup(frontLeft, backLeft);
+
   /** Speed controller group for the motor controllers on the right. */
   private final SpeedControllerGroup rightMotorControllers = new SpeedControllerGroup(frontRight, backRight);
 

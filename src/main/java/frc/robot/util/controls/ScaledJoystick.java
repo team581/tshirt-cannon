@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.OI;
 
 public final class ScaledJoystick extends Joystick {
+
   public ScaledJoystick(int port) {
     super(port);
   }
