@@ -6,7 +6,11 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot;
 
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
 import frc.robot.util.Config;
+import frc.robot.util.controls.ports.Buttons;
 import frc.robot.util.controls.ScaledJoystick;
 
 /**
@@ -37,6 +41,12 @@ public final class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
   public static final ScaledJoystick driveJoystick = new ScaledJoystick(RobotMap.controllerPort);
+  private final JoystickButton aButton = new JoystickButton(driveJoystick, Buttons.a);
+
+  public OI() {
+    aButton.whenPressed(new MoveDoubleSolenoid(Robot.m_pneumaticsSubsystem.solenoid, Value.kForward));
+    aButton.whenReleased(new MoveDoubleSolenoid(Robot.m_pneumaticsSubsystem.solenoid, Value.kReverse));
+  }
 
   /**
    * Scales a value to be more precise at lower values.
@@ -44,5 +54,12 @@ public final class OI {
    */
   public static double scale(double value) {
     return Math.pow(value, Config.joystickValueExponent);
+  }
+
+  /**
+   * Disable event listeners for inputs when the program is shutting down.
+   */
+  public void close() {
+    this.aButton.close();
   }
 }
