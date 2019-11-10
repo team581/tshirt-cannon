@@ -6,11 +6,11 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot;
 
+import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.MotorSubsystem;
@@ -24,9 +24,9 @@ import frc.robot.util.Config;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  public static MotorSubsystem motorSubsystem = new MotorSubsystem();
-  public static OI m_oi;
+  public static final ExampleSubsystem m_subsystem = new ExampleSubsystem();
+  public static final MotorSubsystem motorSubsystem = new MotorSubsystem();
+  public static final OI m_oi = new OI();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -39,7 +39,6 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     System.out.println("Hello from " + Config.id);
 
-    m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
 
     // chooser.addOption("My Auto", new MyAutoCommand());
@@ -115,6 +114,13 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
 
-    motorSubsystem.drive.arcadeDrive(OI.driveJoystick.getScaledY(), OI.driveJoystick.getScaledX());
+    final double x = OI.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.xAxis);
+    final double y = OI.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.yAxis);
+
+    motorSubsystem.drive.arcadeDrive(
+      OI.scale(y),
+      OI.scale(x),
+      false
+    );
   }
 }
