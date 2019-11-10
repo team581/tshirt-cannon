@@ -1,4 +1,7 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false
+  },
   "files.exclude": {
     "**/.DS_Store": true,
     "**/.git": true,
@@ -9,5 +12,6 @@
     ".project": true,
     "bin/": true
   },
-  "java.configuration.updateBuildConfiguration": "automatic"
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.saveActions.organizeImports": false
 }
