@@ -16,6 +16,7 @@ import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.MotorSubsystem;
 import frc.robot.subsystems.PneumaticsSubsystem;
 import frc.robot.util.Config;
+import frc.robot.util.ShuffleboardUtil;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,10 +26,11 @@ import frc.robot.util.Config;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  public static MotorSubsystem motorSubsystem = new MotorSubsystem();
+  public static final ExampleSubsystem m_subsystem = new ExampleSubsystem();
+  public static final MotorSubsystem motorSubsystem = new MotorSubsystem();
   public static PneumaticsSubsystem m_pneumaticsSubsystem = new PneumaticsSubsystem();
-  public static OI m_oi;
+  public static final OI m_oi = new OI();
+  public static final ShuffleboardUtil shuffleBoardUtil = new ShuffleboardUtil();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -41,7 +43,6 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     System.out.println("Hello from " + Config.id);
 
-    m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
 
     // chooser.addOption("My Auto", new MyAutoCommand());
@@ -114,7 +115,12 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
 
-    motorSubsystem.drive.arcadeDrive(OI.driveJoystick.getScaledY(), OI.driveJoystick.getScaledX());
+    final double x = OI.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.xAxis);
+    final double y = OI.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.yAxis);
+
+    shuffleBoardUtil.logJoystickValues(x, y);
+
+    motorSubsystem.drive.arcadeDrive(OI.scale(y), OI.scale(x), false);
   }
 
   @Override

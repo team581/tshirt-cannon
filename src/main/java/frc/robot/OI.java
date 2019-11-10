@@ -11,7 +11,8 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
 import frc.robot.util.Config;
 import frc.robot.util.controls.ports.Buttons;
-import frc.robot.util.controls.ScaledJoystick;
+import edu.wpi.first.wpilibj.Joystick;
+import frc.robot.util.Config;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -40,7 +41,7 @@ public final class OI {
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
-  public static final ScaledJoystick driveJoystick = new ScaledJoystick(RobotMap.controllerPort);
+  public static final Joystick driveJoystick = new Joystick(RobotMap.controllerPort);
   private final JoystickButton aButton = new JoystickButton(driveJoystick, Buttons.a);
 
   public OI() {
@@ -50,10 +51,10 @@ public final class OI {
 
   /**
    * Scales a value to be more precise at lower values.
-   * @return scaled value
+   * @return Scaled value
    */
   public static double scale(double value) {
-    return Math.pow(value, Config.joystickValueExponent);
+    return Math.copySign(Math.pow(value, Config.joystickValueExponent), value);
   }
 
   /**
