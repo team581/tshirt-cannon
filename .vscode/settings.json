@@ -1,13 +1,13 @@
 {
-  "java.configuration.updateBuildConfiguration": "automatic",
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
     "**/.DS_Store": true,
-    "bin/": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
     ".classpath": true,
-    ".project": true
-  }
+    ".project": true,
+    "bin/": true
+  },
+  "java.configuration.updateBuildConfiguration": "automatic"
 }
