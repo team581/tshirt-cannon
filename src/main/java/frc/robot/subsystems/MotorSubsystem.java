@@ -8,9 +8,11 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import frc.robot.RobotMap;
+import frc.robot.util.ShuffleboardUtil;
 
 /**
  * Motor subsystem.
@@ -40,6 +42,14 @@ public class MotorSubsystem extends Subsystem {
    * This is where most of the driving action is performed.
    */
   public final DifferentialDrive drive = new DifferentialDrive(leftMotorControllers, rightMotorControllers);
+
+  public MotorSubsystem() {
+    ShuffleboardUtil
+      .tab.add("Mecanum Drive Train", drive)
+      .withSize(4, 2)
+      .withPosition(0, 0)
+      .withWidget(BuiltInWidgets.kDifferentialDrive);
+  }
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
