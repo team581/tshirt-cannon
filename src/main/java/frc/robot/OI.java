@@ -44,8 +44,8 @@ public final class OI {
   private final JoystickButton aButton = new JoystickButton(driveJoystick, Buttons.a);
 
   public OI() {
-    aButton.whenPressed(new MoveDoubleSolenoid(Robot.m_pneumaticsSubsystem.solenoid, Value.kForward));
-    aButton.whenReleased(new MoveDoubleSolenoid(Robot.m_pneumaticsSubsystem.solenoid, Value.kReverse));
+    aButton.whenPressed(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.solenoid, Value.kForward));
+    aButton.whenReleased(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.solenoid, Value.kReverse));
   }
 
   /**

@@ -27,7 +27,7 @@ public class MoveDoubleSolenoid extends InstantCommand {
    */
   public MoveDoubleSolenoid(DoubleSolenoid solenoid, DoubleSolenoid.Value value) {
     super();
-    requires(Robot.m_pneumaticsSubsystem);
+    requires(Robot.pneumaticsSubsystem);
 
     this.targetSolenoid = solenoid;
     this.newValue = value;

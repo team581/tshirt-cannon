@@ -10,9 +10,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.TimedRobot;
-import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
 import frc.robot.subsystems.MotorSubsystem;
 import frc.robot.subsystems.PneumaticsSubsystem;
 import frc.robot.util.Config;
@@ -26,14 +26,13 @@ import frc.robot.util.ShuffleboardUtil;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static final ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static final MotorSubsystem motorSubsystem = new MotorSubsystem();
-  public static PneumaticsSubsystem m_pneumaticsSubsystem = new PneumaticsSubsystem();
-  public static final OI m_oi = new OI();
+  public static PneumaticsSubsystem pneumaticsSubsystem = new PneumaticsSubsystem();
+  public static final OI operatorInput = new OI();
   public static final ShuffleboardUtil shuffleBoardUtil = new ShuffleboardUtil();
 
-  Command m_autonomousCommand;
-  SendableChooser<Command> m_chooser = new SendableChooser<>();
+  Command autonomousCommand;
+  SendableChooser<Command> chooser = new SendableChooser<>();
 
   /**
    * This function is run when the robot is first started up and should be used
@@ -43,10 +42,10 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     System.out.println("Hello from " + Config.id);
 
-    m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
+    chooser.setDefaultOption("Default Auto", new MoveDoubleSolenoid(pneumaticsSubsystem.solenoid, DoubleSolenoid.Value.kForward));
 
     // chooser.addOption("My Auto", new MyAutoCommand());
-    SmartDashboard.putData("Auto mode", m_chooser);
+    SmartDashboard.putData("Auto mode", chooser);
   }
 
   /**
@@ -86,7 +85,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_chooser.getSelected();
+    autonomousCommand = chooser.getSelected();
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
@@ -95,8 +94,8 @@ public class Robot extends TimedRobot {
      * ExampleCommand(); break; }
      */
     // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.start();
+    if (autonomousCommand != null) {
+      autonomousCommand.start();
     }
   }
 
@@ -106,8 +105,8 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
+    if (autonomousCommand != null) {
+      autonomousCommand.cancel();
     }
   }
 
@@ -127,6 +126,6 @@ public class Robot extends TimedRobot {
   public void close() {
     super.close();
 
-    m_oi.close();
+    operatorInput.close();
   }
 }
