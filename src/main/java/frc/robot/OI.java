@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
 import frc.robot.util.Config;
-import frc.robot.util.Config;
 import frc.robot.util.controls.ports.Buttons;
 
 /**
