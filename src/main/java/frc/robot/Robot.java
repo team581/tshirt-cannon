@@ -28,7 +28,7 @@ import frc.robot.util.ShuffleboardUtil;
 public class Robot extends TimedRobot {
   public static final MotorSubsystem motorSubsystem = new MotorSubsystem();
   public static PneumaticsSubsystem pneumaticsSubsystem = new PneumaticsSubsystem();
-  public static final OI operatorInput = new OI();
+  public static final Controls operatorInput = new Controls();
   public static final ShuffleboardUtil shuffleBoardUtil = new ShuffleboardUtil();
 
   Command autonomousCommand;
@@ -114,12 +114,12 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
 
-    final double x = OI.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.xAxis);
-    final double y = OI.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.yAxis);
+    final double x = Controls.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.xAxis);
+    final double y = Controls.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.yAxis);
 
     shuffleBoardUtil.logJoystickValues(x, y);
 
-    motorSubsystem.drive.arcadeDrive(OI.scale(y), OI.scale(x), false);
+    motorSubsystem.drive.arcadeDrive(Controls.scale(y), Controls.scale(x), false);
   }
 
   @Override

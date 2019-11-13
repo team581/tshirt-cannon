@@ -17,7 +17,7 @@ import frc.robot.util.controls.ports.Buttons;
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
-public final class OI {
+public final class Controls {
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
@@ -42,10 +42,13 @@ public final class OI {
   // button.whenReleased(new ExampleCommand());
   public static final Joystick driveJoystick = new Joystick(RobotMap.controllerPort);
   private final JoystickButton aButton = new JoystickButton(driveJoystick, Buttons.a);
+  private final JoystickButton bButton = new JoystickButton(driveJoystick, Buttons.b);
 
-  public OI() {
+  public Controls() {
     aButton.whenPressed(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.solenoid, Value.kForward));
     aButton.whenReleased(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.solenoid, Value.kReverse));
+
+    bButton.whenPressed(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.solenoid, Value.kOff));
   }
 
   /**
