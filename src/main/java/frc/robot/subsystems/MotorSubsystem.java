@@ -45,10 +45,11 @@ public class MotorSubsystem extends Subsystem {
 
   public MotorSubsystem() {
     ShuffleboardUtil
-      .tab.add("Mecanum Drive Train", drive)
-      .withSize(4, 2)
-      .withPosition(0, 0)
-      .withWidget(BuiltInWidgets.kDifferentialDrive);
+      .tab
+        .add("Differential Drive Train", drive)
+        .withSize(4, 2)
+        .withPosition(0, 0)
+        .withWidget(BuiltInWidgets.kDifferentialDrive);
   }
 
   // Put methods for controlling this subsystem
