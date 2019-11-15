@@ -10,8 +10,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
-import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
 import frc.robot.RobotMap;
+import frc.robot.util.Colors;
 import frc.robot.util.ShuffleboardUtil;
 import java.util.Map;
 
@@ -27,7 +27,7 @@ public class PneumaticsSubsystem extends Subsystem {
       .withSize(1, 1)
       .withPosition(2, 3)
       .withWidget(BuiltInWidgets.kDifferentialDrive)
-      .withProperties(Map.of("color when true", "#4caf50", "color when false", "#f44336"));
+      .withProperties(Map.of("color when true", Colors.GREEN, "color when false", Colors.RED));
   }
 
   /** The solenoid. */
