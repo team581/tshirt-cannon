@@ -7,6 +7,23 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import java.time.format.DateTimeFormatter;
 import java.time.ZonedDateTime;
 
+/// Visualization of the Shuffleboard layout         \\\
+/// Please update this when the layout changes       \\\
+/// This is a 10x6 grid, upper left corner is (0, 0) \\\
+/// Dimensions can change depending on screen size   \\\
+// +----------+
+// |JJDDDD    |
+// |JJDDDD    |
+// |xxS       |
+// |yy        |
+// |          |
+// +----------+
+// Key:
+// J: Joystick output graph
+// D: Differential drive train diagram (see MotorSubsystem for reference)
+// x: Joystick X number bar
+// y: Joystick y number bar
+// S: Double solenoid value (green for extended, red for not)
 public final class ShuffleboardUtil {
   /** Current time used to help distinguish the name of the Shuffleboard tab. */
   private static final String currentTime = DateTimeFormatter
@@ -15,14 +32,14 @@ public final class ShuffleboardUtil {
     .toString();
 
   /** String used to identify this Shuffleboard tab from duplicates. */
-  private static String tabDistinguisher = Config.id + " " + currentTime;
+  private static final String tabDistinguisher = Config.id + " " + currentTime;
 
   /** Shuffleboard tab used for logging. */
   public static final ShuffleboardTab tab = Shuffleboard.getTab(tabDistinguisher);
 
   private final NetworkTableEntry joystickData = tab
     .add("Joystick Output", new double[] { 0, 0 })
-    .withPosition(11, 0)
+    .withPosition(0, 0)
     .withSize(2, 2)
     .withWidget(BuiltInWidgets.kGraph)
     .getEntry();
@@ -30,11 +47,13 @@ public final class ShuffleboardUtil {
   private final NetworkTableEntry joyX = tab
     .add("Joystick X", 0)
     .withPosition(0, 2)
+    .withSize(2, 1)
     .withWidget(BuiltInWidgets.kNumberBar)
     .getEntry();
   private final NetworkTableEntry joyY = tab
     .add("Joystick Y", 0)
     .withPosition(0, 3)
+    .withSize(2, 1)
     .withWidget(BuiltInWidgets.kNumberBar)
     .getEntry();
 

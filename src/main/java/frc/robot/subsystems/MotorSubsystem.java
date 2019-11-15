@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import frc.robot.RobotMap;
 import frc.robot.util.ShuffleboardUtil;
+import java.util.Map;
 
 /**
  * Motor subsystem.
@@ -45,11 +46,11 @@ public class MotorSubsystem extends Subsystem {
 
   public MotorSubsystem() {
     ShuffleboardUtil
-      .tab
-        .add("Differential Drive Train", drive)
-        .withSize(4, 2)
-        .withPosition(0, 0)
-        .withWidget(BuiltInWidgets.kDifferentialDrive);
+      .tab.add("Differential Drive Train", drive)
+      .withSize(4, 2)
+      .withPosition(2, 0)
+      .withWidget(BuiltInWidgets.kDifferentialDrive)
+      .withProperties(Map.of("number of wheels", 6));
   }
 
   // Put methods for controlling this subsystem

@@ -33,12 +33,13 @@ public class RobotMap {
   /** The port for the Spark motor controller on the back right. */
   public final static int backRightSparkPort = 4;
 
+  // :)
   /** Controller port. */
   public final static int controllerPort = 0;
 
   /** The PCM channel to move the double solenoid in the forward direction. */
-  public final static int doubleSolenoidForwardChannel = 8;
+  public final static int doubleSolenoidForwardChannel = 1;
 
   /** The PCM channel to move the double solenoid in the reverse direction. */
-  public final static int doubleSolenoidReverseChannel = 9;
+  public final static int doubleSolenoidReverseChannel = 0;
 }
