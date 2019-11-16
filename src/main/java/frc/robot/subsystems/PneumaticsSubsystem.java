@@ -23,7 +23,7 @@ public class PneumaticsSubsystem extends Subsystem {
 
   public PneumaticsSubsystem() {
     ShuffleboardUtil
-      .tab.add("Solenoid value", solenoid.get() == Value.kForward)
+      .tab.add("Solenoid value", solenoid1.get() == Value.kForward)
       .withSize(1, 1)
       .withPosition(2, 3)
       .withWidget(BuiltInWidgets.kDifferentialDrive)
@@ -31,9 +31,19 @@ public class PneumaticsSubsystem extends Subsystem {
   }
 
   /** The solenoid. */
-  public final DoubleSolenoid solenoid = new DoubleSolenoid(
-    RobotMap.doubleSolenoidForwardChannel,
-    RobotMap.doubleSolenoidReverseChannel
+  public final DoubleSolenoid solenoid1 = new DoubleSolenoid(
+    RobotMap.doubleSolenoidOneForwardChannel,
+    RobotMap.doubleSolenoidOneReverseChannel
+ );
+
+    public final DoubleSolenoid solenoid2 = new DoubleSolenoid(
+    RobotMap.doubleSolenoidTwoForwardChannel,
+    RobotMap.doubleSolenoidTwoReverseChannel
+  );
+
+  public final DoubleSolenoid solenoid3 = new DoubleSolenoid(
+    RobotMap.doubleSolenoidThreeForwardChannel,
+    RobotMap.doubleSolenoidThreeReverseChannel
   );
 
   // Put methods for controlling this subsystem

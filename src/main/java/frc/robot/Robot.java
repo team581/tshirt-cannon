@@ -44,7 +44,7 @@ public class Robot extends TimedRobot {
 
     chooser.setDefaultOption(
       "Default Auto",
-      new MoveDoubleSolenoid(pneumaticsSubsystem.solenoid, DoubleSolenoid.Value.kForward)
+      new MoveDoubleSolenoid(pneumaticsSubsystem.solenoid1, DoubleSolenoid.Value.kForward)
     );
 
     // chooser.addOption("My Auto", new MyAutoCommand());
