@@ -6,6 +6,7 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot.subsystems;
 
+import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
@@ -20,15 +21,13 @@ import java.util.Map;
  * Handles compressed air, mainly just solenoids.
  */
 public class PneumaticsSubsystem extends Subsystem {
-
-  public PneumaticsSubsystem() {
-    ShuffleboardUtil
-      .tab.add("Solenoid value", solenoid.get() == Value.kForward)
-      .withSize(1, 1)
-      .withPosition(2, 3)
-      .withWidget(BuiltInWidgets.kDifferentialDrive)
-      .withProperties(Map.of("color when true", Colors.GREEN, "color when false", Colors.RED));
-  }
+  private NetworkTableEntry solenoidIndicator = ShuffleboardUtil
+    .tab.add("Solenoid value", false)
+    .withSize(1, 1)
+    .withPosition(2, 3)
+    .withWidget(BuiltInWidgets.kBooleanBox)
+    .withProperties(Map.of("color when true", Colors.GREEN, "color when false", Colors.RED))
+    .getEntry();
 
   /** The solenoid. */
   public final DoubleSolenoid solenoid = new DoubleSolenoid(
@@ -42,5 +41,12 @@ public class PneumaticsSubsystem extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
   // setDefaultCommand(new MySpecialCommand());
+  }
+
+  @Override
+  public void periodic() {
+    System.out.println("solenoid value rn: " + solenoid.get());
+    System.out.println("is solenoid forward?: " + (solenoid.get() == Value.kForward));
+    this.solenoidIndicator.setBoolean(solenoid.get() == Value.kForward);
   }
 }

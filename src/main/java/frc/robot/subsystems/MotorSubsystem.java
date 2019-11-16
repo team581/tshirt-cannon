@@ -47,10 +47,10 @@ public class MotorSubsystem extends Subsystem {
   public MotorSubsystem() {
     ShuffleboardUtil
       .tab.add("Differential Drive Train", drive)
-      .withSize(4, 2)
+      .withSize(4, 3)
       .withPosition(2, 0)
       .withWidget(BuiltInWidgets.kDifferentialDrive)
-      .withProperties(Map.of("number of wheels", 6));
+      .withProperties(Map.of("Number of wheels", 6));
   }
 
   // Put methods for controlling this subsystem
@@ -58,6 +58,6 @@ public class MotorSubsystem extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-  // setDefaultCommand(new MySpecialCommand());
+    // setDefaultCommand(new MySpecialCommand());
   }
 }
