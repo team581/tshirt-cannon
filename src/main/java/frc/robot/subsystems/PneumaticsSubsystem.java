@@ -33,7 +33,7 @@ public class PneumaticsSubsystem extends Subsystem {
   public final DoubleSolenoid solenoid = new DoubleSolenoid(
     RobotMap.doubleSolenoidForwardChannel,
     RobotMap.doubleSolenoidReverseChannel
- );
+  );
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
