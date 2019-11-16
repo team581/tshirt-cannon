@@ -21,19 +21,18 @@ public class RobotMap {
   // number and the module. For example you with a rangefinder:
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
-  /** The port for the Spark motor controller on the front left. */
+  /** The PWM port for the Spark motor controller on the front left. */
   public final static int frontLeftSparkPort = 1;
 
-  /** The port for the Spark motor controller on the front right. */
+  /** The PWM port for the Spark motor controller on the front right. */
   public final static int frontRightSparkPort = 2;
 
-  /** The port for the Spark motor controller on the back left. */
+  /** The PWM port for the Spark motor controller on the back left. */
   public final static int backLeftSparkPort = 3;
 
-  /** The port for the Spark motor controller on the back right. */
+  /** The PWM port for the Spark motor controller on the back right. */
   public final static int backRightSparkPort = 4;
 
-  // :)
   /** Controller port. */
   public final static int controllerPort = 0;
 
