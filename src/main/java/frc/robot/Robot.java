@@ -120,9 +120,9 @@ public class Robot extends TimedRobot {
     final double x = Controls.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.xAxis);
     final double y = Controls.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.yAxis);
 
-    shuffleBoardUtil.logJoystickValues(x, y);
+    shuffleBoardUtil.logJoystickValues(x, -y);
 
-    motorSubsystem.drive.arcadeDrive(Controls.scale(y), Controls.scale(x), false);
+    motorSubsystem.drive.arcadeDrive(Controls.scale(-y), Controls.scale(x), false);
   }
 
   @Override
