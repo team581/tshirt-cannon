@@ -6,6 +6,8 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot;
 
+import frc.robot.util.DoubleSolenoidChannels;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -36,9 +38,12 @@ public class RobotMap {
   /** Controller port. */
   public final static int controllerPort = 0;
 
-  /** The PCM channel to move the double solenoid in the forward direction. */
-  public final static int doubleSolenoidForwardChannel = 1;
+  /** The PCM channels for the double solenoid that controls the firing mechanism. */
+  public final static DoubleSolenoidChannels firingMechanism = new DoubleSolenoidChannels(1, 2);
 
-  /** The PCM channel to move the double solenoid in the reverse direction. */
-  public final static int doubleSolenoidReverseChannel = 0;
+  /** The ports channels for the double solenoid that controls the plunger used to load t-shirts. */
+  public final static DoubleSolenoidChannels plunger = new DoubleSolenoidChannels(1, 2);
+
+  /** The ports channels for the double solenoid that controls the shell ejector. */
+  public final static DoubleSolenoidChannels ejector = new DoubleSolenoidChannels(1, 2);
 }

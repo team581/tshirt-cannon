@@ -7,9 +7,9 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.Joystick;
-import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
+import frc.robot.commands.macros.Fire;
+import frc.robot.commands.pneumatics.ToggleDoubleSolenoid;
 import frc.robot.util.Config;
 import frc.robot.util.controls.ports.Buttons;
 
@@ -45,10 +45,9 @@ public final class Controls {
   private final JoystickButton bButton = new JoystickButton(driveJoystick, Buttons.b);
 
   public Controls() {
-    aButton.whenPressed(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.solenoid, Value.kForward));
-    aButton.whenReleased(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.solenoid, Value.kReverse));
+    aButton.whenPressed(new Fire());
 
-    bButton.whenPressed(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.solenoid, Value.kOff));
+    bButton.toggleWhenPressed(new ToggleDoubleSolenoid(Robot.pneumaticsSubsystem.plunger));
   }
 
   /**

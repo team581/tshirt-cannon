@@ -8,33 +8,27 @@ package frc.robot.commands.pneumatics;
 
 import edu.wpi.first.wpilibj.command.InstantCommand;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import frc.robot.Robot;
 
-/**
- * Instant command to move a double solenoid.
- */
-public class MoveDoubleSolenoid extends InstantCommand {
-  /** The double solenoid to move. */
+public class ToggleDoubleSolenoid extends InstantCommand {
+  /** The double solenoid to toggle. */
   private DoubleSolenoid targetSolenoid;
 
-  /** The value that the double solenoid should be set to. */
-  private DoubleSolenoid.Value newValue;
-
   /**
-   * Creates the command to set the double solenoid to a value.
-   * @param solenoid The double solenoid that should be moved
-   * @param value The value that the double solenoid should be set to
+   * Toggle a double solenoid's value.
+   * @param solenoid The solenoid that should be moved
    */
-  public MoveDoubleSolenoid(DoubleSolenoid solenoid, DoubleSolenoid.Value value) {
+  public ToggleDoubleSolenoid(DoubleSolenoid solenoid) {
     super();
     requires(Robot.pneumaticsSubsystem);
 
     this.targetSolenoid = solenoid;
-    this.newValue = value;
   }
 
   @Override
   protected void initialize() {
-    this.targetSolenoid.set(this.newValue);
+    // This will set the value to forward if the value is reverse of off (the default value)
+    this.targetSolenoid.set(this.targetSolenoid.get() == Value.kReverse ? Value.kForward : Value.kReverse);
   }
 }

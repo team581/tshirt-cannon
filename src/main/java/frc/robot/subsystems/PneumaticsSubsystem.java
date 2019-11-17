@@ -22,18 +22,24 @@ import java.util.Map;
  */
 public class PneumaticsSubsystem extends Subsystem {
   private NetworkTableEntry solenoidIndicator = ShuffleboardUtil
-    .tab.add("Solenoid value", false)
+    .tab.add("Firing mechanism solenoid value", false)
     .withSize(1, 1)
     .withPosition(2, 3)
     .withWidget(BuiltInWidgets.kBooleanBox)
     .withProperties(Map.of("color when true", Colors.GREEN, "color when false", Colors.RED))
     .getEntry();
 
-  /** The solenoid. */
-  public final DoubleSolenoid solenoid = new DoubleSolenoid(
-    RobotMap.doubleSolenoidForwardChannel,
-    RobotMap.doubleSolenoidReverseChannel
+  /** The firing mechanism double solenoid. */
+  public final DoubleSolenoid firingMechanism = new DoubleSolenoid(
+    RobotMap.firingMechanism.forward,
+    RobotMap.firingMechanism.reverse
   );
+
+  /** The double solenoid that controls the plunger used to load t-shirts. */
+  public final DoubleSolenoid plunger = new DoubleSolenoid(RobotMap.plunger.forward, RobotMap.plunger.reverse);
+
+  /** The double solenoid that controls the shell ejector. */
+  public final DoubleSolenoid ejector = new DoubleSolenoid(RobotMap.ejector.forward, RobotMap.ejector.reverse);
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
@@ -45,8 +51,8 @@ public class PneumaticsSubsystem extends Subsystem {
 
   @Override
   public void periodic() {
-    System.out.println("solenoid value rn: " + solenoid.get());
-    System.out.println("is solenoid forward?: " + (solenoid.get() == Value.kForward));
-    this.solenoidIndicator.setBoolean(solenoid.get() == Value.kForward);
+    System.out.println("solenoid value rn: " + firingMechanism.get());
+    System.out.println("is solenoid forward?: " + (firingMechanism.get() == Value.kForward));
+    this.solenoidIndicator.setBoolean(firingMechanism.get() == Value.kForward);
   }
 }
