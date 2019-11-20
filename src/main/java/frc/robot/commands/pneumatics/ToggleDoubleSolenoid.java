@@ -29,6 +29,6 @@ public class ToggleDoubleSolenoid extends InstantCommand {
   @Override
   protected void initialize() {
     // This will set the value to forward if the value is reverse of off (the default value)
-    this.targetSolenoid.set(this.targetSolenoid.get() == Value.kReverse ? Value.kForward : Value.kReverse);
+    this.targetSolenoid.set(this.targetSolenoid.get() == Value.kForward ? Value.kReverse : Value.kForward);
   }
 }
