@@ -9,8 +9,10 @@ package frc.robot.subsystems;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.util.Colors;
 import frc.robot.util.ShuffleboardUtil;
@@ -41,6 +43,12 @@ public class PneumaticsSubsystem extends Subsystem {
   /** The double solenoid that controls the shell ejector. */
   public final DoubleSolenoid ejector = new DoubleSolenoid(RobotMap.ejector.forward, RobotMap.ejector.reverse);
 
+  @Override
+  public void close() {
+    super.close();
+    Robot.relaySubsystem.compressor.set(Value.kOff);
+  }
+
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   @Override
@@ -51,8 +59,12 @@ public class PneumaticsSubsystem extends Subsystem {
 
   @Override
   public void periodic() {
-    System.out.println("solenoid value rn: " + firingMechanism.get());
-    System.out.println("is solenoid forward?: " + (firingMechanism.get() == Value.kForward));
-    this.solenoidIndicator.setBoolean(firingMechanism.get() == Value.kForward);
+    // Log solenoid status to Shuffleboard.
+    this.solenoidIndicator.setBoolean(firingMechanism.get() == DoubleSolenoid.Value.kForward);
+
+    // Turn on the siren when the plunger is sealed
+    Robot.relaySubsystem.siren.set(
+      this.plunger.get() == DoubleSolenoid.Value.kForward ? Relay.Value.kOn : Relay.Value.kOff
+    );
   }
 }

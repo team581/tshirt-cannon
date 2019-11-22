@@ -9,12 +9,14 @@ package frc.robot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
 import frc.robot.subsystems.MotorSubsystem;
 import frc.robot.subsystems.PneumaticsSubsystem;
+import frc.robot.subsystems.RelaySubsystem;
 import frc.robot.util.Config;
 import frc.robot.util.ShuffleboardUtil;
 
@@ -27,17 +29,16 @@ import frc.robot.util.ShuffleboardUtil;
  */
 public class Robot extends TimedRobot {
   public static final MotorSubsystem motorSubsystem = new MotorSubsystem();
-  public static PneumaticsSubsystem pneumaticsSubsystem = new PneumaticsSubsystem();
+
+  // Setup relays before pneumatics or else it will error out when accessing the siren
+  public static final RelaySubsystem relaySubsystem = new RelaySubsystem();
+  public static final PneumaticsSubsystem pneumaticsSubsystem = new PneumaticsSubsystem();
   public static final Controls operatorInput = new Controls();
   public static final ShuffleboardUtil shuffleBoardUtil = new ShuffleboardUtil();
 
   Command autonomousCommand;
   SendableChooser<Command> chooser = new SendableChooser<>();
 
-  /**
-   * This function is run when the robot is first started up and should be used
-   * for any initialization code.
-   */
   @Override
   public void robotInit() {
     System.out.println("Hello from " + Config.id);
@@ -60,7 +61,16 @@ public class Robot extends TimedRobot {
    * and SmartDashboard integrated updating.
    */
   @Override
-  public void robotPeriodic() {}
+  public void robotPeriodic() {
+    // This should go in the {@link Relay} file, but it is extremely annoying to deal with accessing the {@link Robot} instance while keeping the `relaySubsystem` statically accessible.
+    if (this.isEnabled() && relaySubsystem.compressor.get() != Value.kOn) {
+      // If robot is enabled and the compressor isn't on, then turn the compressor on
+      relaySubsystem.compressor.set(Value.kOn);
+    } else if (this.isDisabled() && relaySubsystem.compressor.get() != Value.kOff) {
+      // If the robot is disabled and the compressor isn't on, then turn the compressor off
+      relaySubsystem.compressor.set(Value.kOff);
+    }
+  }
 
   /**
    * This function is called once each time the robot enters Disabled mode. You
