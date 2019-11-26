@@ -43,12 +43,6 @@ public class PneumaticsSubsystem extends Subsystem {
   /** The double solenoid that controls the shell ejector. */
   public final DoubleSolenoid ejector = new DoubleSolenoid(RobotMap.ejector.forward, RobotMap.ejector.reverse);
 
-  @Override
-  public void close() {
-    super.close();
-    Robot.relaySubsystem.compressor.set(Value.kOff);
-  }
-
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   @Override

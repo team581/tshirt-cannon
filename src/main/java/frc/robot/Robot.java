@@ -61,16 +61,7 @@ public class Robot extends TimedRobot {
    * and SmartDashboard integrated updating.
    */
   @Override
-  public void robotPeriodic() {
-    // This should go in the {@link Relay} file, but it is extremely annoying to deal with accessing the {@link Robot} instance while keeping the `relaySubsystem` statically accessible.
-    if (this.isEnabled() && relaySubsystem.compressor.get() != Value.kOn) {
-      // If robot is enabled and the compressor isn't on, then turn the compressor on
-      relaySubsystem.compressor.set(Value.kOn);
-    } else if (this.isDisabled() && relaySubsystem.compressor.get() != Value.kOff) {
-      // If the robot is disabled and the compressor isn't on, then turn the compressor off
-      relaySubsystem.compressor.set(Value.kOff);
-    }
-  }
+  public void robotPeriodic() {}
 
   /**
    * This function is called once each time the robot enters Disabled mode. You

@@ -8,17 +8,12 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.Relay.Value;
-import frc.robot.Robot;
 import frc.robot.RobotMap;
 
 /**
  * Instantiate the relays that are used in other files.
  */
 public class RelaySubsystem extends Subsystem {
-  /** Controls the compressor used to collect compressed air for the pneumatic components. {@link PneumaticsSubsystem} */
-  public final Relay compressor = new Relay(RobotMap.compressorRelayPort);
-
   /** Controls the spinning siren light that signals when you are about to be shot with a t-shirt. */
   public final Relay siren = new Relay(RobotMap.sirenLightRelayPort);
 
