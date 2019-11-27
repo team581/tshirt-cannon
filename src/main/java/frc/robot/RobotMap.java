@@ -35,9 +35,6 @@ public class RobotMap {
   /** The PWM port for the Spark motor controller on the back right. */
   public final static int backRightSparkPort = 4;
 
-  /** The relay port for the compressor. */
-  public final static int compressorRelayPort = 0;
-
   /** The relay port for the big, spinning, siren light. */
   public final static int sirenLightRelayPort = 0;
 
