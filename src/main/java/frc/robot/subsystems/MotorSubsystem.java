@@ -45,12 +45,11 @@ public class MotorSubsystem extends Subsystem {
   public final DifferentialDrive drive = new DifferentialDrive(leftMotorControllers, rightMotorControllers);
 
   public MotorSubsystem() {
-    ShuffleboardUtil
-      .tab.add("Differential Drive Train", drive)
-      .withSize(4, 3)
-      .withPosition(2, 0)
-      .withWidget(BuiltInWidgets.kDifferentialDrive)
-      .withProperties(Map.of("Number of wheels", 6));
+    // leftMotorControllers.setInverted(true);
+      ShuffleboardUtil.tab.add(
+        "Differential Drive Train",
+        drive
+      ).withSize(4, 3).withPosition(2, 0).withWidget(BuiltInWidgets.kDifferentialDrive).withProperties(Map.of("Number of wheels", 6));
   }
 
   // Put methods for controlling this subsystem

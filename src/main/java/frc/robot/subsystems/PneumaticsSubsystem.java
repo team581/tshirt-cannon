@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
-import frc.robot.util.Colors;
 import frc.robot.util.ShuffleboardUtil;
 import java.util.Map;
 
@@ -22,12 +21,12 @@ import java.util.Map;
  * Handles compressed air, mainly just solenoids.
  */
 public class PneumaticsSubsystem extends Subsystem {
-  private NetworkTableEntry solenoidIndicator = ShuffleboardUtil
-    .tab.add("Firing mechanism solenoid value", false)
+  private final NetworkTableEntry sirenLightIndicator = ShuffleboardUtil
+    .tab.add("Siren light", false)
     .withSize(1, 1)
-    .withPosition(2, 3)
+    .withPosition(9, 0)
     .withWidget(BuiltInWidgets.kBooleanBox)
-    .withProperties(Map.of("color when true", Colors.GREEN, "color when false", Colors.RED))
+    .withProperties(Map.of("color when true", "#ff8040", "color when false", "#121212"))
     .getEntry();
 
   /** The firing mechanism double solenoid. */
@@ -39,9 +38,6 @@ public class PneumaticsSubsystem extends Subsystem {
   /** The double solenoid that controls the plunger used to load t-shirts. */
   public final DoubleSolenoid plunger = new DoubleSolenoid(RobotMap.plunger.forward, RobotMap.plunger.reverse);
 
-  /** The double solenoid that controls the shell ejector. */
-  public final DoubleSolenoid ejector = new DoubleSolenoid(RobotMap.ejector.forward, RobotMap.ejector.reverse);
-
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   @Override
@@ -52,12 +48,20 @@ public class PneumaticsSubsystem extends Subsystem {
 
   @Override
   public void periodic() {
-    // Log solenoid status to Shuffleboard.
-    this.solenoidIndicator.setBoolean(firingMechanism.get() == DoubleSolenoid.Value.kForward);
+    /** Current value of the plunger double solenoid. */
+    final DoubleSolenoid.Value plungerValue = this.plunger.get();
+
+    if (plungerValue == DoubleSolenoid.Value.kForward) {
+      Robot.relaySubsystem.siren.set(Relay.Value.kOn);
+
+      this.sirenLightIndicator.setBoolean(true);
+    } else {
+      this.sirenLightIndicator.setBoolean(false);
+
+      Robot.relaySubsystem.siren.set(Relay.Value.kOff);
+    }
 
     // Turn on the siren when the plunger is sealed
-    Robot.relaySubsystem.siren.set(
-      this.plunger.get() == DoubleSolenoid.Value.kForward ? Relay.Value.kOn : Relay.Value.kOff
-    );
+    Robot.relaySubsystem.siren.set(plungerValue == DoubleSolenoid.Value.kForward ? Relay.Value.kOn : Relay.Value.kOff);
   }
 }

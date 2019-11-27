@@ -11,19 +11,20 @@ import java.time.ZonedDateTime;
 /// Please update this when the layout changes       \\\
 /// This is a 10x6 grid, upper left corner is (0, 0) \\\
 /// Dimensions can change depending on screen size   \\\
+//  0123456789
 // +----------+
-// |JJDDDD    |
+// |JJDDDD   L|
 // |JJDDDD    |
 // |xxDDDD    |
-// |yyS       |
+// |yy        |
 // |          |
 // +----------+
 // Key:
 // J: Joystick output graph
-// D: Differential drive train diagram (see MotorSubsystem for reference)
+// D: Differential drive train diagram (see {@link MotorSubsystem} for reference)
 // x: Joystick X number bar
 // y: Joystick y number bar
-// S: Double solenoid value (green for extended, red for not)
+// L: Siren light enabled
 public final class ShuffleboardUtil {
   /** Current time used to help distinguish the name of the Shuffleboard tab. */
   private static final String currentTime = DateTimeFormatter

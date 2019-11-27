@@ -55,7 +55,7 @@ public final class Controls {
    * @return Scaled value
    */
   public static double scale(double value) {
-    return Math.copySign(Math.pow(value, Config.joystickValueExponent), value);
+    return (Math.copySign(Math.pow(value, Config.joystickValueExponent), value)) / 2;
   }
 
   /**

@@ -24,13 +24,13 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
   /** The PWM port for the Spark motor controller on the front left. */
-  public final static int frontLeftSparkPort = 1;
+  public final static int frontLeftSparkPort = 2;
 
   /** The PWM port for the Spark motor controller on the front right. */
-  public final static int frontRightSparkPort = 2;
+  public final static int frontRightSparkPort = 3;
 
   /** The PWM port for the Spark motor controller on the back left. */
-  public final static int backLeftSparkPort = 3;
+  public final static int backLeftSparkPort = 1;
 
   /** The PWM port for the Spark motor controller on the back right. */
   public final static int backRightSparkPort = 4;
@@ -38,18 +38,15 @@ public class RobotMap {
   /** The relay port for the compressor. */
   public final static int compressorRelayPort = 0;
 
-  /** The relay port for the big, spinning, siren lgiht. */
-  public final static int sirenLightRelayPort = 1;
+  /** The relay port for the big, spinning, siren light. */
+  public final static int sirenLightRelayPort = 0;
 
   /** Controller port. */
   public final static int controllerPort = 0;
 
   /** The PCM channels for the double solenoid that controls the firing mechanism. */
-  public final static DoubleSolenoidChannels firingMechanism = new DoubleSolenoidChannels(1, 2);
+  public final static DoubleSolenoidChannels firingMechanism = new DoubleSolenoidChannels(4, 5);
 
   /** The ports channels for the double solenoid that controls the plunger used to load t-shirts. */
-  public final static DoubleSolenoidChannels plunger = new DoubleSolenoidChannels(1, 2);
-
-  /** The ports channels for the double solenoid that controls the shell ejector. */
-  public final static DoubleSolenoidChannels ejector = new DoubleSolenoidChannels(1, 2);
+  public final static DoubleSolenoidChannels plunger = new DoubleSolenoidChannels(6, 7);
 }

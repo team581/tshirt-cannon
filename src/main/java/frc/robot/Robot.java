@@ -9,7 +9,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -18,6 +17,7 @@ import frc.robot.subsystems.MotorSubsystem;
 import frc.robot.subsystems.PneumaticsSubsystem;
 import frc.robot.subsystems.RelaySubsystem;
 import frc.robot.util.Config;
+import frc.robot.util.controls.ports.joysticks.LeftJoystick;
 import frc.robot.util.ShuffleboardUtil;
 
 /**
@@ -118,8 +118,8 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
 
-    final double x = Controls.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.xAxis);
-    final double y = Controls.driveJoystick.getRawAxis(Config.preferredDrivingJoystick.yAxis);
+    final double x = Controls.driveJoystick.getRawAxis(LeftJoystick.xAxis);
+    final double y = Controls.driveJoystick.getRawAxis(LeftJoystick.yAxis);
 
     shuffleBoardUtil.logJoystickValues(x, -y);
 
