@@ -15,7 +15,6 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
 import frc.robot.subsystems.MotorSubsystem;
 import frc.robot.subsystems.PneumaticsSubsystem;
-import frc.robot.subsystems.RelaySubsystem;
 import frc.robot.util.Config;
 import frc.robot.util.controls.ports.joysticks.LeftJoystick;
 import frc.robot.util.ShuffleboardUtil;
@@ -30,8 +29,6 @@ import frc.robot.util.ShuffleboardUtil;
 public class Robot extends TimedRobot {
   public static final MotorSubsystem motorSubsystem = new MotorSubsystem();
 
-  // Setup relays before pneumatics or else it will error out when accessing the siren
-  public static final RelaySubsystem relaySubsystem = new RelaySubsystem();
   public static final PneumaticsSubsystem pneumaticsSubsystem = new PneumaticsSubsystem();
   public static final Controls operatorInput = new Controls();
   public static final ShuffleboardUtil shuffleBoardUtil = new ShuffleboardUtil();
