@@ -32,12 +32,12 @@ public class Fire extends CommandGroup {
     // e.g. if Command1 requires chassis, and Command2 requires arm,
     // a CommandGroup containing them would require both the chassis and the
     // arm.
-    if (Robot.pneumaticsSubsystem.plunger.get() != Value.kForward) {
+    if (Robot.pneumaticsSubsystem.plunger.get() != Value.kReverse) {
       // Seal firing chamber
-      addSequential(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.plunger, Value.kForward));
+      addSequential(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.plunger, Value.kReverse));
 
       // Wait a bit for the firing chamber to seal
-      addSequential(new WaitCommand(1));
+      addSequential(new WaitCommand(1.5));
     }
 
     // Fire T-shirt
@@ -50,6 +50,6 @@ public class Fire extends CommandGroup {
     addSequential(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.firingMechanism, Value.kReverse));
 
     // Open chamber again
-    addParallel(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.plunger, Value.kReverse));
+    addParallel(new MoveDoubleSolenoid(Robot.pneumaticsSubsystem.plunger, Value.kForward));
   }
 }

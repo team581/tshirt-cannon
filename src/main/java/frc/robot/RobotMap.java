@@ -45,5 +45,5 @@ public class RobotMap {
   public final static DoubleSolenoidChannels firingMechanism = new DoubleSolenoidChannels(4, 5);
 
   /** The ports channels for the double solenoid that controls the plunger used to load t-shirts. */
-  public final static DoubleSolenoidChannels plunger = new DoubleSolenoidChannels(6, 7);
+  public final static DoubleSolenoidChannels plunger = new DoubleSolenoidChannels(6, 0);
 }
