@@ -22,7 +22,7 @@ lodash@4.17.15:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
-prettier-plugin-java@^0.4.0:
+prettier-plugin-java@0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/prettier-plugin-java/-/prettier-plugin-java-0.4.0.tgz#e05a0282fc39a5deb89739d1b54bcd9bc6534bb6"
   integrity sha512-TgO3VDGBUyPX4jV1+KPdVKlVsoExLFf/jhvNdEs/bhyZIAHXg6LV7MGAaJqblDCh2CIJrOp/j3KLpKvwftFIrQ==
@@ -31,7 +31,7 @@ prettier-plugin-java@^0.4.0:
     lodash "4.17.15"
     prettier "1.18.2"
 
-prettier@1.18.2, prettier@^1.18.2:
+prettier@1.18.2:
   version "1.18.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.18.2.tgz#6823e7c5900017b4bd3acf46fe9ac4b4d7bda9ea"
   integrity sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==

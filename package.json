@@ -1,8 +1,8 @@
 {
   "private": true,
   "devDependencies": {
-    "prettier": "^1.18.2",
-    "prettier-plugin-java": "^0.4.0"
+    "prettier": "1.18.2",
+    "prettier-plugin-java": "0.4.0"
   },
   "scripts": {
     "check-formatting": "prettier --ignore-path .gitignore --check \"./**/*.{{j,t}{s,sx},flow,{{sc,c},le}ss,json,m{d,dx},{y,ya}ml,java}\""
