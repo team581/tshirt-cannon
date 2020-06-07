@@ -9,10 +9,10 @@ chevrotain@6.5.0:
   dependencies:
     regexp-to-ast "0.4.0"
 
-java-parser@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/java-parser/-/java-parser-0.4.0.tgz#baf00a906a51921b380ba2b06fc2547271c0e97a"
-  integrity sha512-mzmgkwOIYdEQiWInuRp4PDQulZyCKaGXMF/o/EaIO215M6FTUW28BdMFnnEasgqZjHMpNx8IrhNBoSP3gG7PBQ==
+java-parser@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/java-parser/-/java-parser-0.8.0.tgz#5abee16e3fbc11d0d90c5b6ac69919e01fe1ba5c"
+  integrity sha512-8MOu9EDjWlAcBnxjVI8jblcOX/zJt9XVLaMLrXYvmJYk3gvRqTUKsEp/PxaooJQc6wh+nPEyqEbhCy3BWIgi0g==
   dependencies:
     chevrotain "6.5.0"
     lodash "4.17.15"
@@ -22,19 +22,19 @@ lodash@4.17.15:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
-prettier-plugin-java@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-java/-/prettier-plugin-java-0.4.0.tgz#e05a0282fc39a5deb89739d1b54bcd9bc6534bb6"
-  integrity sha512-TgO3VDGBUyPX4jV1+KPdVKlVsoExLFf/jhvNdEs/bhyZIAHXg6LV7MGAaJqblDCh2CIJrOp/j3KLpKvwftFIrQ==
+prettier-plugin-java@0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-java/-/prettier-plugin-java-0.8.0.tgz#231320f9c7f1a115df33256c0b4c66e48eb876ce"
+  integrity sha512-+4qdhUfFQIj4bLGSDrAGmUZKXQRjJYpQFbmRh04atEZe7QEZUF6NHVyRjJ73Cgwhc5NaiyIpFhtcXgLf9J9V6A==
   dependencies:
-    java-parser "^0.4.0"
+    java-parser "^0.8.0"
     lodash "4.17.15"
-    prettier "1.18.2"
+    prettier "2.0.4"
 
-prettier@1.18.2:
-  version "1.18.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.18.2.tgz#6823e7c5900017b4bd3acf46fe9ac4b4d7bda9ea"
-  integrity sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
+prettier@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.4.tgz#2d1bae173e355996ee355ec9830a7a1ee05457ef"
+  integrity sha512-SVJIQ51spzFDvh4fIbCLvciiDMCrRhlN3mbZvv/+ycjvmF5E73bKdGfU8QDLNmjYJf+lsGnDBC4UUnvTe5OO0w==
 
 prettier@2.0.5:
   version "2.0.5"
