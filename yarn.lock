@@ -30,7 +30,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-java@npm:^0.8.0":
+"prettier-plugin-java@npm:0.8.0":
   version: 0.8.0
   resolution: "prettier-plugin-java@npm:0.8.0"
   dependencies:
@@ -50,7 +50,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.0.5":
+"prettier@npm:2.0.5":
   version: 2.0.5
   resolution: "prettier@npm:2.0.5"
   bin:
@@ -70,7 +70,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tshirt-cannon@workspace:."
   dependencies:
-    prettier: ^2.0.5
-    prettier-plugin-java: ^0.8.0
+    prettier: 2.0.5
+    prettier-plugin-java: 0.8.0
   languageName: unknown
   linkType: soft
