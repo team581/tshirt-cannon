@@ -13,5 +13,6 @@
     "bin/": true
   },
   "java.configuration.updateBuildConfiguration": "automatic",
-  "java.saveActions.organizeImports": false
+  "java.saveActions.organizeImports": false,
+  "prettier.prettierPath": ".vscode/pnpify/prettier/index.js"
 }

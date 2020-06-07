@@ -183,8 +183,6 @@ gradle-app.setting
 
 # End of https://www.toptal.com/developers/gitignore/api/java,node,linux,gradle,windows,visualstudiocode
 
-# Yarn 2 Zero-installs
-.yarn/*
-!.yarn/cache
-!.yarn/releases
-!.yarn/plugins
+# Yarn 2
+.pnp.*
+.yarn

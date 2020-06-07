@@ -1,10 +1,11 @@
 {
-  "private": true,
   "devDependencies": {
-    "prettier": "2.0.5",
-    "prettier-plugin-java": "0.8.0"
+    "prettier": "^2.0.5",
+    "prettier-plugin-java": "^0.8.0"
   },
+  "name": "tshirt-cannon",
+  "private": true,
   "scripts": {
-    "check-formatting": "prettier --ignore-path .gitignore --check \"./**/*.{{j,t}{s,sx},flow,{{sc,c},le}ss,json,m{d,dx},{y,ya}ml,java}\""
+    "style": "prettier --plugin prettier-plugin-java --check ."
   }
 }
