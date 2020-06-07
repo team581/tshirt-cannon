@@ -6,8 +6,8 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot.commands.pneumatics;
 
-import edu.wpi.first.wpilibj.command.InstantCommand;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
 /**

@@ -6,8 +6,8 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot;
 
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.macros.Fire;
 import frc.robot.commands.pneumatics.ToggleDoubleSolenoid;
 import frc.robot.util.Config;
