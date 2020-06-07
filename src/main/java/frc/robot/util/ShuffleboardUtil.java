@@ -27,10 +27,7 @@ import java.time.format.DateTimeFormatter;
 // L: Siren light enabled
 public final class ShuffleboardUtil {
   /** Current time used to help distinguish the name of the Shuffleboard tab. */
-  private static final String currentTime = DateTimeFormatter
-    .ofPattern("hh:mm:ss")
-    .format(ZonedDateTime.now())
-    .toString();
+  private static final String currentTime = DateTimeFormatter.ofPattern("hh:mm:ss").format(ZonedDateTime.now()).toString();
 
   /** String used to identify this Shuffleboard tab from duplicates. */
   private static final String tabDistinguisher = Config.id + " " + currentTime;
@@ -45,18 +42,8 @@ public final class ShuffleboardUtil {
     .withWidget(BuiltInWidgets.kGraph)
     .getEntry();
 
-  private final NetworkTableEntry joyX = tab
-    .add("Joystick X", 0)
-    .withPosition(0, 2)
-    .withSize(2, 1)
-    .withWidget(BuiltInWidgets.kNumberBar)
-    .getEntry();
-  private final NetworkTableEntry joyY = tab
-    .add("Joystick Y", 0)
-    .withPosition(0, 3)
-    .withSize(2, 1)
-    .withWidget(BuiltInWidgets.kNumberBar)
-    .getEntry();
+  private final NetworkTableEntry joyX = tab.add("Joystick X", 0).withPosition(0, 2).withSize(2, 1).withWidget(BuiltInWidgets.kNumberBar).getEntry();
+  private final NetworkTableEntry joyY = tab.add("Joystick Y", 0).withPosition(0, 3).withSize(2, 1).withWidget(BuiltInWidgets.kNumberBar).getEntry();
 
   /**
    * Log joystick values using a graph and number bars on Shuffleboard.

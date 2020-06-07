@@ -16,10 +16,7 @@ import frc.robot.RobotMap;
  */
 public class PneumaticsSubsystem extends Subsystem {
   /** The firing mechanism double solenoid. */
-  public final DoubleSolenoid firingMechanism = new DoubleSolenoid(
-    RobotMap.firingMechanism.forward,
-    RobotMap.firingMechanism.reverse
-  );
+  public final DoubleSolenoid firingMechanism = new DoubleSolenoid(RobotMap.firingMechanism.forward, RobotMap.firingMechanism.reverse);
 
   /** The double solenoid that controls the plunger used to load t-shirts. */
   public final DoubleSolenoid plunger = new DoubleSolenoid(RobotMap.plunger.forward, RobotMap.plunger.reverse);
