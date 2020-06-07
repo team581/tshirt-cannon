@@ -24,26 +24,26 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
   /** The PWM port for the Spark motor controller on the front left. */
-  public final static int frontLeftSparkPort = 2;
+  public static final int frontLeftSparkPort = 2;
 
   /** The PWM port for the Spark motor controller on the front right. */
-  public final static int frontRightSparkPort = 3;
+  public static final int frontRightSparkPort = 3;
 
   /** The PWM port for the Spark motor controller on the back left. */
-  public final static int backLeftSparkPort = 1;
+  public static final int backLeftSparkPort = 1;
 
   /** The PWM port for the Spark motor controller on the back right. */
-  public final static int backRightSparkPort = 4;
+  public static final int backRightSparkPort = 4;
 
   /** The relay port for the big, spinning, siren light. */
-  public final static int sirenLightRelayPort = 0;
+  public static final int sirenLightRelayPort = 0;
 
   /** Controller port. */
-  public final static int controllerPort = 0;
+  public static final int controllerPort = 0;
 
   /** The PCM channels for the double solenoid that controls the firing mechanism. */
-  public final static DoubleSolenoidChannels firingMechanism = new DoubleSolenoidChannels(4, 5);
+  public static final DoubleSolenoidChannels firingMechanism = new DoubleSolenoidChannels(4, 5);
 
   /** The ports channels for the double solenoid that controls the plunger used to load t-shirts. */
-  public final static DoubleSolenoidChannels plunger = new DoubleSolenoidChannels(6, 0);
+  public static final DoubleSolenoidChannels plunger = new DoubleSolenoidChannels(6, 0);
 }

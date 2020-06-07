@@ -6,8 +6,8 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
 /**
@@ -29,6 +29,6 @@ public class PneumaticsSubsystem extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-  // setDefaultCommand(new MySpecialCommand());
+    // setDefaultCommand(new MySpecialCommand());
   }
 }

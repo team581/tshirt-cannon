@@ -6,18 +6,18 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
 import frc.robot.subsystems.MotorSubsystem;
 import frc.robot.subsystems.PneumaticsSubsystem;
 import frc.robot.util.Config;
-import frc.robot.util.controls.ports.joysticks.LeftJoystick;
 import frc.robot.util.ShuffleboardUtil;
+import frc.robot.util.controls.ports.joysticks.LeftJoystick;
 
 /**
  * The VM is configured to automatically run this class, and to call the

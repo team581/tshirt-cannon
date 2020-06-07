@@ -6,11 +6,11 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
-import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import frc.robot.RobotMap;
 import frc.robot.util.ShuffleboardUtil;
 import java.util.Map;
@@ -46,10 +46,12 @@ public class MotorSubsystem extends Subsystem {
 
   public MotorSubsystem() {
     // leftMotorControllers.setInverted(true);
-      ShuffleboardUtil.tab.add(
-        "Differential Drive Train",
-        drive
-      ).withSize(4, 3).withPosition(2, 0).withWidget(BuiltInWidgets.kDifferentialDrive).withProperties(Map.of("Number of wheels", 6));
+    ShuffleboardUtil
+      .tab.add("Differential Drive Train", drive)
+      .withSize(4, 3)
+      .withPosition(2, 0)
+      .withWidget(BuiltInWidgets.kDifferentialDrive)
+      .withProperties(Map.of("Number of wheels", 6));
   }
 
   // Put methods for controlling this subsystem
@@ -57,6 +59,6 @@ public class MotorSubsystem extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-  // setDefaultCommand(new MySpecialCommand());
+    // setDefaultCommand(new MySpecialCommand());
   }
 }

@@ -6,11 +6,11 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot.commands.macros;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
 import frc.robot.Robot;
+import frc.robot.commands.pneumatics.MoveDoubleSolenoid;
 
 public class Fire extends CommandGroup {
 
