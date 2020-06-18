@@ -14,5 +14,5 @@
   },
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.saveActions.organizeImports": false,
-  "prettier.prettierPath": ".vscode/pnpify/prettier/index.js"
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
 }
