@@ -14,5 +14,9 @@
   },
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.saveActions.organizeImports": false,
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "search.exclude": {
+    "**/.pnp.*": true,
+    "**/.yarn": true
+  }
 }
