@@ -46,8 +46,8 @@ public class MotorSubsystem extends Subsystem {
 
   public MotorSubsystem() {
     // leftMotorControllers.setInverted(true);
-    ShuffleboardUtil
-      .tab.add("Differential Drive Train", drive)
+    ShuffleboardUtil.tab
+      .add("Differential Drive Train", drive)
       .withSize(4, 3)
       .withPosition(2, 0)
       .withWidget(BuiltInWidgets.kDifferentialDrive)

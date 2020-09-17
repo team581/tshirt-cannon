@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["prettier", "npm:2.1.2"],
-            ["prettier-plugin-java", "npm:0.8.0"]
+            ["prettier-plugin-java", "npm:0.8.2"]
           ],
           "linkType": "SOFT",
         }]
@@ -54,30 +54,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["java-parser", [
-        ["npm:0.8.0", {
-          "packageLocation": "./.yarn/cache/java-parser-npm-0.8.0-db0e61faa1-699eb92d3e.zip/node_modules/java-parser/",
+        ["npm:0.8.2", {
+          "packageLocation": "./.yarn/cache/java-parser-npm-0.8.2-c6ea62528a-8cb2a04130.zip/node_modules/java-parser/",
           "packageDependencies": [
-            ["java-parser", "npm:0.8.0"],
+            ["java-parser", "npm:0.8.2"],
             ["chevrotain", "npm:6.5.0"],
-            ["lodash", "npm:4.17.15"]
+            ["lodash", "npm:4.17.20"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["lodash", [
-        ["npm:4.17.15", {
-          "packageLocation": "./.yarn/cache/lodash-npm-4.17.15-566d9324f7-aec3fbb757.zip/node_modules/lodash/",
+        ["npm:4.17.20", {
+          "packageLocation": "./.yarn/cache/lodash-npm-4.17.20-c0db62021c-c62101d250.zip/node_modules/lodash/",
           "packageDependencies": [
-            ["lodash", "npm:4.17.15"]
+            ["lodash", "npm:4.17.20"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["prettier", [
-        ["npm:2.0.4", {
-          "packageLocation": "./.yarn/cache/prettier-npm-2.0.4-8d1f5f638d-a43343ac00.zip/node_modules/prettier/",
+        ["npm:2.1.1", {
+          "packageLocation": "./.yarn/cache/prettier-npm-2.1.1-4096027ae9-420a807cda.zip/node_modules/prettier/",
           "packageDependencies": [
-            ["prettier", "npm:2.0.4"]
+            ["prettier", "npm:2.1.1"]
           ],
           "linkType": "HARD",
         }],
@@ -90,13 +90,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["prettier-plugin-java", [
-        ["npm:0.8.0", {
-          "packageLocation": "./.yarn/cache/prettier-plugin-java-npm-0.8.0-c040196dc3-a6a7d90d68.zip/node_modules/prettier-plugin-java/",
+        ["npm:0.8.2", {
+          "packageLocation": "./.yarn/cache/prettier-plugin-java-npm-0.8.2-cca7a52fab-6ada3485e6.zip/node_modules/prettier-plugin-java/",
           "packageDependencies": [
-            ["prettier-plugin-java", "npm:0.8.0"],
-            ["java-parser", "npm:0.8.0"],
-            ["lodash", "npm:4.17.15"],
-            ["prettier", "npm:2.0.4"]
+            ["prettier-plugin-java", "npm:0.8.2"],
+            ["java-parser", "npm:0.8.2"],
+            ["lodash", "npm:4.17.20"],
+            ["prettier", "npm:2.1.1"]
           ],
           "linkType": "HARD",
         }]
@@ -116,7 +116,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["tshirt-cannon", "workspace:."],
             ["prettier", "npm:2.1.2"],
-            ["prettier-plugin-java", "npm:0.8.0"]
+            ["prettier-plugin-java", "npm:0.8.2"]
           ],
           "linkType": "SOFT",
         }]
