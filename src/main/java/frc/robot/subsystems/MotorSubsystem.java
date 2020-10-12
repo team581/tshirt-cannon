@@ -20,6 +20,7 @@ import java.util.Map;
  * Makes robot go zoom.
  */
 public class MotorSubsystem extends Subsystem {
+
   /** The Spark motor controller for the front left side of the robot. */
   private final Spark frontLeft = new Spark(RobotMap.frontLeftSparkPort);
 

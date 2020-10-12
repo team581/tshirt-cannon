@@ -14,6 +14,7 @@ import frc.robot.Robot;
  * Instant command to move a double solenoid.
  */
 public class MoveDoubleSolenoid extends InstantCommand {
+
   /** The double solenoid to move. */
   private DoubleSolenoid targetSolenoid;
 

@@ -7,6 +7,7 @@ import io.github.cdimascio.dotenv.Dotenv;
  * Stores the configuration for the robot.
  */
 public final class Config {
+
   /** The loader for getting environnment variables from the system or the `.env` file. */
   private static final Dotenv dotenv = Dotenv.configure().directory(Filesystem.getDeployDirectory() + "/.env").load();
 
