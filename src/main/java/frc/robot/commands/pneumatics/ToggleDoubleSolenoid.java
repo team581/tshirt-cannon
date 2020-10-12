@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
 public class ToggleDoubleSolenoid extends InstantCommand {
+
   /** The double solenoid to toggle. */
   private DoubleSolenoid targetSolenoid;
 

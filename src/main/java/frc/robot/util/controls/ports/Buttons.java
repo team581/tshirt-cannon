@@ -4,6 +4,7 @@ package frc.robot.util.controls.ports;
  * Ports for the buttons on controllers.
  */
 public final class Buttons {
+
   /** The `a` button on the controller. */
   public static final int a = 1;
 

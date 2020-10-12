@@ -15,6 +15,7 @@ import frc.robot.RobotMap;
  * Handles compressed air, mainly just solenoids.
  */
 public class PneumaticsSubsystem extends Subsystem {
+
   /** The firing mechanism double solenoid. */
   public final DoubleSolenoid firingMechanism = new DoubleSolenoid(RobotMap.firingMechanism.forward, RobotMap.firingMechanism.reverse);
 

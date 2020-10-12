@@ -27,6 +27,7 @@ import frc.robot.util.controls.ports.joysticks.LeftJoystick;
  * project.
  */
 public class Robot extends TimedRobot {
+
   public static final MotorSubsystem motorSubsystem = new MotorSubsystem();
 
   public static final PneumaticsSubsystem pneumaticsSubsystem = new PneumaticsSubsystem();
