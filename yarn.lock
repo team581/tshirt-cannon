@@ -51,6 +51,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:2.3.0":
+  version: 2.3.0
+  resolution: "prettier@npm:2.3.0"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 652640cc8b71bc5277cfb8bf6f161783ca588efcf683c3d630837b39da8d57fef35c9e00ae5855a8e3c75136c42274046c913cc2b2d2968558315f31c6a26981
+  languageName: node
+  linkType: hard
+
 "regexp-to-ast@npm:0.4.0":
   version: 0.4.0
   resolution: "regexp-to-ast@npm:0.4.0"
@@ -62,7 +71,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tshirt-cannon@workspace:."
   dependencies:
-    prettier: 2.2.1
+    prettier: 2.3.0
     prettier-plugin-java: 1.0.2
   languageName: unknown
   linkType: soft

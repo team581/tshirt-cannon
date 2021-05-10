@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["prettier", "npm:2.2.1"],
+            ["prettier", "npm:2.3.0"],
             ["prettier-plugin-java", "npm:1.0.2"]
           ],
           "linkType": "SOFT",
@@ -80,6 +80,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.2.1"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:2.3.0", {
+          "packageLocation": "./.yarn/cache/prettier-npm-2.3.0-29ef37e8b6-652640cc8b.zip/node_modules/prettier/",
+          "packageDependencies": [
+            ["prettier", "npm:2.3.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["prettier-plugin-java", [
@@ -108,7 +115,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["tshirt-cannon", "workspace:."],
-            ["prettier", "npm:2.2.1"],
+            ["prettier", "npm:2.3.0"],
             ["prettier-plugin-java", "npm:1.0.2"]
           ],
           "linkType": "SOFT",
