@@ -9,7 +9,7 @@
     "style": "prettier --plugin prettier-plugin-java --check ."
   },
   "devDependencies": {
-    "prettier": "2.3.0",
+    "prettier": "2.3.2",
     "prettier-plugin-java": "1.1.1"
   },
   "packageManager": "yarn@3.0.2"
