@@ -1,22 +1,22 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": false
-  },
-  "files.exclude": {
-    "**/.DS_Store": true,
-    "**/.git": true,
-    "**/.hg": true,
-    "**/.svn": true,
-    "**/CVS": true,
-    ".classpath": true,
-    ".project": true,
-    "bin/": true
-  },
   "java.configuration.updateBuildConfiguration": "automatic",
-  "java.saveActions.organizeImports": false,
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "java.server.launchMode": "Standard",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "bin/": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "**/*~": true
+  },
   "search.exclude": {
-    "**/.pnp.*": true,
-    "**/.yarn": true
-  }
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
 }

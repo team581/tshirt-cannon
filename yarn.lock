@@ -3,14 +3,23 @@
 
 __metadata:
   version: 4
-  cacheKey: 7
+  cacheKey: 8
+
+"@team581/tshirt-cannon@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@team581/tshirt-cannon@workspace:."
+  dependencies:
+    prettier: 2.3.0
+    prettier-plugin-java: 1.1.1
+  languageName: unknown
+  linkType: soft
 
 "chevrotain@npm:6.5.0":
   version: 6.5.0
   resolution: "chevrotain@npm:6.5.0"
   dependencies:
     regexp-to-ast: 0.4.0
-  checksum: f8473ac9c12f645548bc92829d4f27e9ce1eb0071d514f8a6da88f5c9fe6f4eab8d9a1e43072ac85f78012573a2165a700be2d4e2c084b30fba6a4cdb6e90dbc
+  checksum: ce03cf3874ae1fd91bb57de753ea313442c7d1be04f59ab126c237062b51f5cb3204e9bdbb1b469973c96c1ce0850e83f909bee14a23bb88a0dbbd964e1c2a9e
   languageName: node
   linkType: hard
 
@@ -20,14 +29,14 @@ __metadata:
   dependencies:
     chevrotain: 6.5.0
     lodash: 4.17.21
-  checksum: f3490ca4bf983dc2c03ee1db70607004132d629866b7e728e3c5923dae1208bf3ca3e91393bd42673afffee912efa7e3a8b07c1d20a72a773cbca509d5ce69a2
+  checksum: 96e607f01760cf96f3da3253dc4c12018dd6b40a66d329516aea2407bf1b0b5229ab0bae28acf7517c4d30a5b5c6eb120f771dc73dea5b5836c2df4bc6781a2c
   languageName: node
   linkType: hard
 
 "lodash@npm:4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
-  checksum: 4983720b9abca930a4a46f18db163d7dad8dd00dbed6db0cc7b499b33b717cce69f80928b27bbb1ff2cbd3b19d251ee90669a8b5ea466072ca81c2ebe91e7468
+  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
   languageName: node
   linkType: hard
 
@@ -38,7 +47,7 @@ __metadata:
     java-parser: 1.1.1
     lodash: 4.17.21
     prettier: 2.2.1
-  checksum: bf1bd800fa059cd0594eb0da3dbd911e9d57835d13b04771e828a2d58a32abc005ee17ae4f2050814d1bbb120083c9255d906b47d5bcdf80c3b42b6b0facbe62
+  checksum: d6b3b788e955192459f8ccc3913a74948477ecd37ea99ed45e3a1a22b93644cae2722324d71ab729c7bf680f5e292354789f10fe3bf5d353b2abc4371539e822
   languageName: node
   linkType: hard
 
@@ -47,7 +56,7 @@ __metadata:
   resolution: "prettier@npm:2.2.1"
   bin:
     prettier: bin-prettier.js
-  checksum: 92c6c9f4b87eba1f28466edee57dd18c80d00b858edda77d46d1950d20e6e302b68ee255fc91133ba931e63c4577b5ae30da194d9626a8f3c0177778b91bf056
+  checksum: 800de2df3d37067ab24478c7f32c60ca0c57b01742133287829feeb4a70d239a7bf6bccb56196784777af591ad80fb9ba70c1a49b0fcecf9f5622a764d513edb
   languageName: node
   linkType: hard
 
@@ -56,22 +65,13 @@ __metadata:
   resolution: "prettier@npm:2.3.0"
   bin:
     prettier: bin-prettier.js
-  checksum: 652640cc8b71bc5277cfb8bf6f161783ca588efcf683c3d630837b39da8d57fef35c9e00ae5855a8e3c75136c42274046c913cc2b2d2968558315f31c6a26981
+  checksum: e8851a45f60f2994775f96e07964646c299b8a8f9c64da4fbd8efafc20db3458bdcedac79aed34e1d5477540b3aa04f6499adc4979cb7937f8ebd058a767d8ff
   languageName: node
   linkType: hard
 
 "regexp-to-ast@npm:0.4.0":
   version: 0.4.0
   resolution: "regexp-to-ast@npm:0.4.0"
-  checksum: 93047971451f70fb24836cc5175fa738f484a2b077b409eb29141bc2d20ff6c25f8724c21432e91f1d3b112372c354ade709b5ce2bc29c1d2e52e879f198b49c
+  checksum: 0f42d802b6259dcd442f79460d8764aa39165323098a6346aded67957816eb2d007ab09e6c674448425df8f721692258c87b51b1ce75c5df23b390dbb36056c0
   languageName: node
   linkType: hard
-
-"tshirt-cannon@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "tshirt-cannon@workspace:."
-  dependencies:
-    prettier: 2.3.0
-    prettier-plugin-java: 1.1.1
-  languageName: unknown
-  linkType: soft
