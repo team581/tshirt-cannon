@@ -1,8 +1,6 @@
 {
-  "default": {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["config:base", ":disableRateLimiting", ":automergePatch", "schedule:daily"],
-    "labels": ["dependencies"],
-    "semanticCommits": true
-  }
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":disableRateLimiting", ":automergePatch", "schedule:daily"],
+  "labels": ["dependencies"],
+  "semanticCommits": true
 }
