@@ -150,3 +150,6 @@ gradle-app.setting
 
 # Yarn fixes for above template
 !.yarn/cache/*.zip
+
+# Java config
+.settings/org.eclipse.buildship.core.prefs
