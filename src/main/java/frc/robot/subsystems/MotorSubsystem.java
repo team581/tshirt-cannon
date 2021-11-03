@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.util.MotorConstants;
 
 public class MotorSubsystem extends SubsystemBase {
+  // TODO: Swap the talons with sparks and swap mecanum with differential drive
   public final WPI_TalonSRX frontRightMotor = new WPI_TalonSRX(MotorConstants.FRONT_RIGHT);
   public final WPI_TalonSRX frontLeftMotor = new WPI_TalonSRX(MotorConstants.FRONT_LEFT);
   public final WPI_TalonSRX rearRightMotor = new WPI_TalonSRX(MotorConstants.REAR_RIGHT);
