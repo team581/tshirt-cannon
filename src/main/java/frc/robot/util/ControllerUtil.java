@@ -8,6 +8,7 @@ package frc.robot.util;
  * Util functions for joysticks.
  */
 public class ControllerUtil {
+
   private static final float DEAD_ZONE = 0.04f;
   private static final float FAST_THRESHOLD = 0.98f;
   private static final float DIVISOR = 3;
