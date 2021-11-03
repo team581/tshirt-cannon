@@ -5,8 +5,12 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
+import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.util.ControllerUtil;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -19,6 +23,11 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 
   private RobotContainer m_robotContainer;
+
+  private static final MecanumDrive motorSubsystem = RobotContainer.motorSubsystem.mecanumDrive;
+  private static final XboxController controller = RobotContainer.controller;
+
+
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -82,7 +91,13 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    final double movementX = -ControllerUtil.joystickScale(controller.getX(Hand.kLeft));
+    final double movementY = ControllerUtil.joystickScale(controller.getY(Hand.kLeft));
+    final double movementZ = ControllerUtil.joystickScale(controller.getX(Hand.kRight));
+
+    motorSubsystem.driveCartesian(movementX, movementY, movementZ);
+  }
 
   @Override
   public void testInit() {
