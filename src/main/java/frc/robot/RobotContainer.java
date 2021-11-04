@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.MotorSubsystem;
+import frc.robot.subsystems.PneumaticsSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -23,6 +24,8 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
   public static final MotorSubsystem motorSubsystem = new MotorSubsystem();
+
+  public static final PneumaticsSubsystem pneumaticsSubsystem = new PneumaticsSubsystem();
 
   public static final XboxController controller = new XboxController(Constants.CONTROLLER_PORT);
 
