@@ -25,7 +25,7 @@ public class ControllerUtil {
    */
   private static double positiveJoystickScale(double x) {
     if (x < DEAD_ZONE) {
-      // Deadzone
+      // Deadzone for the highlight tape
       return 0;
     } else if (x < FAST_THRESHOLD) {
       // Regular usage
