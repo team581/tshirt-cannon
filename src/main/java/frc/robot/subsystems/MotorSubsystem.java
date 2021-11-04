@@ -4,23 +4,20 @@
 
 package frc.robot.subsystems;
 
-
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.util.MotorConstants;
 
 public class MotorSubsystem extends SubsystemBase {
+
   // TODO: Swap the talons with sparks and swap mecanum with differential drive
   public final WPI_TalonSRX frontRightMotor = new WPI_TalonSRX(MotorConstants.FRONT_RIGHT);
   public final WPI_TalonSRX frontLeftMotor = new WPI_TalonSRX(MotorConstants.FRONT_LEFT);
   public final WPI_TalonSRX rearRightMotor = new WPI_TalonSRX(MotorConstants.REAR_RIGHT);
   public final WPI_TalonSRX rearLeftMotor = new WPI_TalonSRX(MotorConstants.REAR_LEFT);
 
-  public final MecanumDrive mecanumDrive = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor,
-      rearRightMotor);
-
+  public final MecanumDrive mecanumDrive = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
 
   /** Creates a new Motors. */
   public MotorSubsystem() {}
@@ -30,4 +27,3 @@ public class MotorSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 }
-

@@ -142,3 +142,6 @@ gradle-app.setting
 # Yarn
 .yarn/*
 .pnp.*
+
+# Vendor dependencies
+vendordeps/

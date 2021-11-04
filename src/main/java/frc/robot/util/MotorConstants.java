@@ -6,8 +6,9 @@ package frc.robot.util;
 
 /** Add your docs here. */
 public class MotorConstants {
-  public final static int FRONT_RIGHT = 1;
-  public final static int FRONT_LEFT = 3;
-  public final static int REAR_RIGHT = 4;
-  public final static int REAR_LEFT = 2;
+
+  public static final int FRONT_RIGHT = 1;
+  public static final int FRONT_LEFT = 3;
+  public static final int REAR_RIGHT = 4;
+  public static final int REAR_LEFT = 2;
 }
