@@ -7,11 +7,12 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.FireCommand;
-import frc.robot.commands.TogglePlungerCommand;
+import frc.robot.subsystems.CannonSubsystem;
 import frc.robot.subsystems.MotorSubsystem;
-import frc.robot.subsystems.PneumaticsSubsystem;
+import frc.robot.subsystems.PlungerSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -21,9 +22,11 @@ import frc.robot.subsystems.PneumaticsSubsystem;
  */
 public final class RobotContainer {
 
+  public static final CannonSubsystem cannonSubsystem = new CannonSubsystem();
+
   public static final MotorSubsystem motorSubsystem = new MotorSubsystem();
 
-  public static final PneumaticsSubsystem pneumaticsSubsystem = new PneumaticsSubsystem();
+  public static final PlungerSubsystem plungerSubsystem = new PlungerSubsystem();
 
   public static final XboxController controller = new XboxController(Constants.CONTROLLER_PORT);
 
@@ -48,6 +51,6 @@ public final class RobotContainer {
     final var bButton = new JoystickButton(controller, XboxController.Button.kB.value);
 
     aButton.whenPressed(new FireCommand());
-    bButton.toggleWhenPressed(new TogglePlungerCommand());
+    bButton.toggleWhenPressed(new InstantCommand(plungerSubsystem::toggle, plungerSubsystem));
   }
 }

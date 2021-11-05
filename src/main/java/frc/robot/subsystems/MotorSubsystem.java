@@ -19,10 +19,10 @@ public final class MotorSubsystem extends SubsystemBase {
   }
 
   // TODO: Swap the talons with sparks and swap mecanum with differential drive
-  public final WPI_TalonSRX frontLeftMotor = new WPI_TalonSRX(Constants.FRONT_LEFT);
-  public final WPI_TalonSRX frontRightMotor = new WPI_TalonSRX(Constants.FRONT_RIGHT);
-  public final WPI_TalonSRX rearLeftMotor = new WPI_TalonSRX(Constants.REAR_LEFT);
-  public final WPI_TalonSRX rearRightMotor = new WPI_TalonSRX(Constants.REAR_RIGHT);
+  private final WPI_TalonSRX frontLeftMotor = new WPI_TalonSRX(Constants.FRONT_LEFT);
+  private final WPI_TalonSRX frontRightMotor = new WPI_TalonSRX(Constants.FRONT_RIGHT);
+  private final WPI_TalonSRX rearLeftMotor = new WPI_TalonSRX(Constants.REAR_LEFT);
+  private final WPI_TalonSRX rearRightMotor = new WPI_TalonSRX(Constants.REAR_RIGHT);
 
   public final MecanumDrive mecanumDrive = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
 
