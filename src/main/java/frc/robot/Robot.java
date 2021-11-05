@@ -20,6 +20,8 @@ import frc.robot.util.ControllerUtil;
  */
 public class Robot extends TimedRobot {
 
+  public static final Controls controls = new Controls();
+
   private Command m_autonomousCommand;
 
   private RobotContainer m_robotContainer;

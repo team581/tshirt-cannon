@@ -147,6 +147,7 @@ gradle-app.setting
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+node_modules
 
 # Yarn fixes for above template
 !.yarn/cache/*.zip

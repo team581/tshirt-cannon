@@ -7,8 +7,9 @@ package frc.robot.util;
 /** Add your docs here. */
 
 public class PneumaticsConstants {
-    public static final int firingMechanismForward = 0;
-    public static final int firingMechanismReverse = 1;
-    public static final int plungerForward = 2;
-    public static final int plungerRevrse = 3;
+
+  public static final int firingMechanismForward = 0;
+  public static final int firingMechanismReverse = 1;
+  public static final int plungerForward = 2;
+  public static final int plungerRevrse = 3;
 }
