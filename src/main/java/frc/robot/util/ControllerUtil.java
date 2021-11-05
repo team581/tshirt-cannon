@@ -9,10 +9,10 @@ package frc.robot.util;
  */
 public class ControllerUtil {
 
-  private static final float DEAD_ZONE = 0.04f;
-  private static final float FAST_THRESHOLD = 0.98f;
-  private static final float DIVISOR = 3;
-  private static final float MIN = 0.08f;
+  private static final double DEAD_ZONE = 0.04f;
+  private static final double FAST_THRESHOLD = 0.98f;
+  private static final double DIVISOR = 3;
+  private static final double MIN = 0.08f;
 
   /**
    * Scale a joystick value.
