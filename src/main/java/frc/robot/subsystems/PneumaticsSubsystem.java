@@ -6,15 +6,19 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.util.PneumaticsConstants;
 
-public class PneumaticsSubsystem extends SubsystemBase {
+public final class PneumaticsSubsystem extends SubsystemBase {
 
-  public final DoubleSolenoid plunger = new DoubleSolenoid(PneumaticsConstants.firingMechanismForward, PneumaticsConstants.firingMechanismReverse);
-  public final DoubleSolenoid firingMechanism = new DoubleSolenoid(PneumaticsConstants.firingMechanismForward, PneumaticsConstants.firingMechanismReverse);
+  private static final class Constants {
 
-  /** Creates a new PneumaticsSubsystem. */
-  public PneumaticsSubsystem() {}
+    public static final int firingMechanismForward = 0;
+    public static final int firingMechanismReverse = 1;
+    public static final int plungerForward = 2;
+    public static final int plungerReverse = 3;
+  }
+
+  public final DoubleSolenoid plunger = new DoubleSolenoid(Constants.plungerForward, Constants.plungerReverse);
+  public final DoubleSolenoid firingMechanism = new DoubleSolenoid(Constants.firingMechanismForward, Constants.firingMechanismReverse);
 
   @Override
   public void periodic() {

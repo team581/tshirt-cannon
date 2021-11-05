@@ -6,8 +6,6 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.util.ControllerUtil;
@@ -20,14 +18,9 @@ import frc.robot.util.ControllerUtil;
  */
 public class Robot extends TimedRobot {
 
-  public static final Controls controls = new Controls();
+  private Command autonomousCommand;
 
-  private Command m_autonomousCommand;
-
-  private RobotContainer m_robotContainer;
-
-  private static final MecanumDrive motorSubsystem = RobotContainer.motorSubsystem.mecanumDrive;
-  private static final XboxController controller = RobotContainer.controller;
+  private RobotContainer robotContainer;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -37,7 +30,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
-    m_robotContainer = new RobotContainer();
+    robotContainer = new RobotContainer();
   }
 
   /**
@@ -66,11 +59,11 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+    autonomousCommand = robotContainer.getAutonomousCommand();
 
     // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.schedule();
+    if (autonomousCommand != null) {
+      autonomousCommand.schedule();
     }
   }
 
@@ -84,19 +77,19 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
+    if (autonomousCommand != null) {
+      autonomousCommand.cancel();
     }
   }
 
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    final double movementX = -ControllerUtil.joystickScale(controller.getX(Hand.kLeft));
-    final double movementY = ControllerUtil.joystickScale(controller.getY(Hand.kLeft));
-    final double movementZ = ControllerUtil.joystickScale(controller.getX(Hand.kRight));
+    final var translateX = -ControllerUtil.joystickScale(RobotContainer.controller.getX(Hand.kLeft));
+    final var translateY = ControllerUtil.joystickScale(RobotContainer.controller.getY(Hand.kLeft));
+    final var rotate = ControllerUtil.joystickScale(RobotContainer.controller.getX(Hand.kRight));
 
-    motorSubsystem.driveCartesian(movementX, movementY, movementZ);
+    RobotContainer.motorSubsystem.mecanumDrive.driveCartesian(translateX, translateY, rotate);
   }
 
   @Override
