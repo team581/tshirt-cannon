@@ -14,6 +14,8 @@ public class ControllerUtil {
   private static final double DIVISOR = 3;
   private static final double MIN = 0.08f;
 
+  private ControllerUtil() {}
+
   /**
    * Scale a joystick value.
    */
