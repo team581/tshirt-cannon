@@ -85,7 +85,9 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
+    //You can only move up and down on the left joystick
     final var leftSpeed = -ControllerUtil.joystickScale(RobotContainer.controller.getY(Hand.kLeft));
+    //You can only move up and down on the right joystick 
     final var rightSpeed = ControllerUtil.joystickScale(RobotContainer.controller.getY(Hand.kRight));
     //final var rotate = ControllerUtil.joystickScale(RobotContainer.controller.getX(Hand.kRight));
 
