@@ -85,11 +85,11 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    final var translateX = -ControllerUtil.joystickScale(RobotContainer.controller.getX(Hand.kLeft));
-    final var translateY = ControllerUtil.joystickScale(RobotContainer.controller.getY(Hand.kLeft));
-    final var rotate = ControllerUtil.joystickScale(RobotContainer.controller.getX(Hand.kRight));
+    final var leftSpeed = -ControllerUtil.joystickScale(RobotContainer.controller.getY(Hand.kLeft));
+    final var rightSpeed = ControllerUtil.joystickScale(RobotContainer.controller.getY(Hand.kRight));
+    //final var rotate = ControllerUtil.joystickScale(RobotContainer.controller.getX(Hand.kRight));
 
-    RobotContainer.motorSubsystem.mecanumDrive.driveCartesian(translateX, translateY, rotate);
+    RobotContainer.motorSubsystem.differentialDrive.tankDrive(leftSpeed, rightSpeed);
   }
 
   @Override
