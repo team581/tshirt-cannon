@@ -10,7 +10,7 @@ package frc.robot.util;
 public final class ControllerUtil {
 
   private static final double DEAD_ZONE = 0.04;
-  private static final double FAST_THRESHOLD = 0.98;
+  private static final double FAST_THRESHOLD = 0.5;
   private static final double DIVISOR = 3;
   private static final double MIN = 0.08;
 
@@ -38,6 +38,6 @@ public final class ControllerUtil {
     }
 
     // Go really fast if you are flooring the joystick
-    return 1;
+    return FAST_THRESHOLD;
   }
 }
