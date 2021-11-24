@@ -8,13 +8,13 @@ package frc.robot.subsystems;
 //import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 import edu.wpi.first.wpilibj.Spark;
-
 //import edu.wpi.first.wpilibj.Spark;
 
 //import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
 //import frc.robot.util.MotorConstants;
 
 public class MotorSubsystem extends SubsystemBase {
@@ -28,7 +28,7 @@ public class MotorSubsystem extends SubsystemBase {
   //public final MecanumDrive mecanumDrive = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
   private final SpeedControllerGroup leftControllerGroup = new SpeedControllerGroup(frontLeftMotor, rearLeftMotor);
   private final SpeedControllerGroup rightControllerGroup = new SpeedControllerGroup(frontRightMotor, rearRightMotor);
-  
+
   public final DifferentialDrive differentialDrive = new DifferentialDrive(leftControllerGroup, rightControllerGroup);
 
   /** Creates a new Motors. */
