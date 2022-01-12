@@ -4,11 +4,9 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.util.ControllerUtil;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -17,7 +15,6 @@ import frc.robot.util.ControllerUtil;
  * project.
  */
 public class Robot extends TimedRobot {
-
   private Command autonomousCommand;
 
   private RobotContainer robotContainer;
@@ -85,13 +82,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    final var leftY = RobotContainer.controller.getY(Hand.kLeft);
-    final var leftSpeed = -ControllerUtil.joystickScale(leftY);
-
-    final var rightY = RobotContainer.controller.getY(Hand.kRight);
-    final var rightSpeed = ControllerUtil.joystickScale(rightY);
-
-    RobotContainer.motorSubsystem.differentialDrive.tankDrive(leftSpeed, rightSpeed);
+    robotContainer.teleopDrive();
   }
 
   @Override

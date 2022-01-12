@@ -8,11 +8,9 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public final class CannonSubsystem extends SubsystemBase {
-
   public static final double FIRE_DURATION_SECONDS = 0.5;
 
   private static final class Constants {
-
     public static final int FORWARD_CHANNEL = 0;
     public static final int REVERSE_CHANNEL = 1;
   }

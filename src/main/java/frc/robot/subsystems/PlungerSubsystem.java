@@ -8,11 +8,9 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class PlungerSubsystem extends SubsystemBase {
-
   public static final double TOGGLE_DURATION_SECONDS = 0.5;
 
   private static final class Constants {
-
     public static final int FORWARD_CHANNEL = 2;
     public static final int REVERSE_CHANNEL = 3;
 

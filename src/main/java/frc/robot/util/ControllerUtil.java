@@ -6,7 +6,6 @@ package frc.robot.util;
 
 /** Util functions for joysticks. */
 public final class ControllerUtil {
-
   private static final double SCALAR = 3;
 
   private ControllerUtil() {}
