@@ -24,10 +24,13 @@ public class MotorSubsystem extends SubsystemBase {
   public final Spark rearRightMotor = new Spark(Constants.REAR_LEFT);
   public final Spark rearLeftMotor = new Spark(Constants.REAR_RIGHT);
 
-  private final SpeedControllerGroup leftControllerGroup = new SpeedControllerGroup(frontLeftMotor, rearLeftMotor);
-  private final SpeedControllerGroup rightControllerGroup = new SpeedControllerGroup(frontRightMotor, rearRightMotor);
+  private final SpeedControllerGroup leftControllerGroup =
+      new SpeedControllerGroup(frontLeftMotor, rearLeftMotor);
+  private final SpeedControllerGroup rightControllerGroup =
+      new SpeedControllerGroup(frontRightMotor, rearRightMotor);
 
-  public final DifferentialDrive differentialDrive = new DifferentialDrive(leftControllerGroup, rightControllerGroup);
+  public final DifferentialDrive differentialDrive =
+      new DifferentialDrive(leftControllerGroup, rightControllerGroup);
 
   @Override
   public void periodic() {

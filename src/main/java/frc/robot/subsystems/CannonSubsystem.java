@@ -17,7 +17,8 @@ public final class CannonSubsystem extends SubsystemBase {
     public static final int REVERSE_CHANNEL = 1;
   }
 
-  private final DoubleSolenoid solenoid = new DoubleSolenoid(Constants.FORWARD_CHANNEL, Constants.REVERSE_CHANNEL);
+  private final DoubleSolenoid solenoid =
+      new DoubleSolenoid(Constants.FORWARD_CHANNEL, Constants.REVERSE_CHANNEL);
 
   @Override
   public void periodic() {

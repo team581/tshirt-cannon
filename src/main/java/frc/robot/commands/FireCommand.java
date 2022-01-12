@@ -15,16 +15,17 @@ public class FireCommand extends SequentialCommandGroup {
 
   public FireCommand() {
     addCommands(
-      // Close plunger
-      new InstantCommand(RobotContainer.plungerSubsystem::close, RobotContainer.plungerSubsystem),
-      new WaitCommand(PlungerSubsystem.TOGGLE_DURATION_SECONDS),
-      // Fire t-shirt
-      new InstantCommand(RobotContainer.cannonSubsystem::activate, RobotContainer.cannonSubsystem),
-      new WaitCommand(CannonSubsystem.FIRE_DURATION_SECONDS),
-      new InstantCommand(RobotContainer.cannonSubsystem::deactivate, RobotContainer.cannonSubsystem),
-      // Open plunger
-      new InstantCommand(RobotContainer.plungerSubsystem::open, RobotContainer.plungerSubsystem),
-      new WaitCommand(PlungerSubsystem.TOGGLE_DURATION_SECONDS)
-    );
+        // Close plunger
+        new InstantCommand(RobotContainer.plungerSubsystem::close, RobotContainer.plungerSubsystem),
+        new WaitCommand(PlungerSubsystem.TOGGLE_DURATION_SECONDS),
+        // Fire t-shirt
+        new InstantCommand(
+            RobotContainer.cannonSubsystem::activate, RobotContainer.cannonSubsystem),
+        new WaitCommand(CannonSubsystem.FIRE_DURATION_SECONDS),
+        new InstantCommand(
+            RobotContainer.cannonSubsystem::deactivate, RobotContainer.cannonSubsystem),
+        // Open plunger
+        new InstantCommand(RobotContainer.plungerSubsystem::open, RobotContainer.plungerSubsystem),
+        new WaitCommand(PlungerSubsystem.TOGGLE_DURATION_SECONDS));
   }
 }

@@ -20,7 +20,8 @@ public class PlungerSubsystem extends SubsystemBase {
     public static final DoubleSolenoid.Value CLOSED_VALUE = DoubleSolenoid.Value.kForward;
   }
 
-  private final DoubleSolenoid solenoid = new DoubleSolenoid(Constants.FORWARD_CHANNEL, Constants.REVERSE_CHANNEL);
+  private final DoubleSolenoid solenoid =
+      new DoubleSolenoid(Constants.FORWARD_CHANNEL, Constants.REVERSE_CHANNEL);
 
   @Override
   public void periodic() {

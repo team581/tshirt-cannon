@@ -4,18 +4,14 @@
 
 package frc.robot.util;
 
-/**
- * Util functions for joysticks.
- */
+/** Util functions for joysticks. */
 public final class ControllerUtil {
 
   private static final double SCALAR = 3;
 
   private ControllerUtil() {}
 
-  /**
-   * Scale a joystick value.
-   */
+  /** Scale a joystick value. */
   public static double joystickScale(double x) {
     return Math.pow(x, 2) / SCALAR;
   }
