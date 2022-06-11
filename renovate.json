@@ -3,8 +3,8 @@
   "extends": [
     "config:base",
     ":disableRateLimiting",
-    ":automergePatch",
-    "schedule:daily"
+    ":automergeMinor",
+    ":automergeBranch"
   ],
   "labels": ["dependencies"],
   "semanticCommits": "disabled"
